@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><%= title %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Rajdhani|Open+Sans">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
+	<script src="scripts/chart.js/dist/Chart.min.js"></script>
+	<script src="scripts/angular-chart.js/dist/angular-chart.min.js"></script>
+
+	<link rel="shortcut icon" type="image/x-icon" href="images/website-logo.jpg"/>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<script src="javascripts/websiteApp.js"></script>
+	<script type="text/javascript" src='javascripts/controllers/home.controller.js'></script>
+	<script type="text/javascript" src='javascripts/controllers/contact.controller.js'></script>
+	<script type="text/javascript" src='javascripts/controllers/blog.controller.js'></script>
+	<script type="text/javascript" src='javascripts/controllers/modal.controller.js'></script>
+	<script type="text/javascript" src="javascripts/controllers/post.controller.js"></script>
+	<script type="text/javascript" src='javascripts/controllers/auth.controller.js'></script>
+	<script type="text/javascript" src='javascripts/directives/typedjs.directive.js'></script>
+	<script type="text/javascript" src="javascripts/services/auth.provider.js"></script>
+	<script type="text/javascript" src="javascripts/main.jquery.js"></script>
+
+	<script type="text/javascript" src="components/underscore/underscore.js"></script>
+	<script type="text/javascript" src="components/angular-underscore-module/angular-underscore-module.js"></script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-97872558-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+	<base href="/">
+</head>
+<body ng-app="websiteApp" onresize="resizeHeader()">
+	<div class="container">
+		<div class="col-xs-12" ng-controller="headerController" style="padding-top:12px;display:inline-flex;">
+			<div ng-click="" class="menu-button" style="border-right: none;">
+				<h4 style="padding:10px">
+					Shop Departments
+				</h4>
+			</div>
+			<div ng-click="" class="menu-button" style="border-right: none;">
+				<h4 style="padding:10px">
+					Weekly Flyer
+				</h4>
+			</div>
+			<div ng-click="" class="menu-button">
+				<h4 style="padding:10px">
+					Shop Recipes
+				</h4>
+			</div>
+			<div style="width:30px"></div>
+			<input type="text" ng-model="search" placeholder="Search" style="padding:5px!important;width:40%!important"/>
+			<button ng-click="" type="button" style="width:50px">
+				<i class="fa fa-search" style="padding:5px!important"></i>
+			</button>
+			<div style="width:450px"></div>
+			<button ng-click="" type="button" style="width:50px">
+				<i class="fa fa-user" style="padding:5px!important"></i>
+			</button>
+			<button ng-click="" type="button" style="width:50px">
+				<i class="fa fa-shopping-cart" style="padding:5px!important"></i>
+			</button>
+		</div>
+		<div class="col-xs-12 view">
+			<div class="view" ng-view></div>
+		</div>
+	</div>
+</body>
+</html>

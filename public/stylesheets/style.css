@@ -1,0 +1,556 @@
+body {
+	width: 100%;
+	height: 100%;
+	width: 100%;
+	height: 100%;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+}
+
+a {
+	color: #00B7FF;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+	cursor: pointer;
+	text-decoration:none;
+}
+
+.menu-button {
+	border:1px lightgray solid;
+}
+
+.row {
+	height: 100%;
+	width: 100%;
+	margin: 0 0 0 0;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.view {
+	height: 100%;
+	padding: 0 0 0 0;
+}
+
+.fa {
+	color: black;
+}
+
+.fa-spin {
+	padding-top: 20%;
+	padding-bottom: 20%;
+	padding-left: 50%;
+	padding-right: 50%;
+	font-size: 50px;
+}
+
+.fa-chevron-circle-down:hover {
+	color: #323232;
+}
+
+.active {
+	color: #FF8C00 !important;
+}
+
+.active:hover {
+	text-decoration: none;
+	color: #FFCB9A !important;
+}
+
+.footer {
+	font-family: 'Rajdhani', sans-serif;
+	text-align: center;
+}
+
+.footer-blog {
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+	font-family: 'Rajdhani', sans-serif;
+	text-align: center;
+}
+
+.no-padding-margin {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.seperator {
+	width: 100%;
+	height: 30px;
+}
+
+.modal-title {
+	font-family: AdamCGPro;
+}
+
+.visible {
+	display: none;
+}
+
+.header-phone {
+	background-color: #f4f4f4;
+	height: 45px;
+	width: 100%;
+	z-index: 1;
+}
+
+.phone-seperator {
+	height: 30px;
+	width: 100%;
+}
+
+.form-auth {
+	max-width: 80%;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+.btn-transparent {
+	background-color: transparent;
+}
+
+.action-seperator {
+	width: 100%;
+	height: 10px;
+}
+
+#btnSuccessTransparent {
+	color: #5cb85c;
+}
+
+/*
+* Fonts
+*/
+
+@font-face
+{
+	font-family: AdamCGPro;
+	src: url("../fonts/ADAM.CG.PRO.otf");
+}
+
+/*
+* Errors
+*/
+
+.error-template {
+	padding-top: 15%;
+	text-align: center;
+}
+
+.btn-error a {
+	color: black;
+}
+
+/*
+* Navigation Menu
+*/
+
+.menuList {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 20px;
+	font-family: 'Rajdhani', sans-serif;
+}
+
+.menuList > li > a:hover {
+	text-decoration: none;
+}
+
+#menuListItem {
+	padding-bottom: 5px;
+}
+
+#menuListItem  > a {
+	color: #808080;
+}
+
+#menuListItem > a:hover {
+	color: #A9A9A9;
+}
+
+.div-phone-menu {
+	padding-top: 5px;
+}
+
+.btn-menu, .btn-menu:hover, .btn-menu:active, .btn-menu:visited, .btn-menu:focus {
+	outline: none;
+}
+
+.btn-menu:hover {
+	color: #bcbcbc;
+}
+
+.mobileMenu {
+	background: #f4f4f4
+}
+
+#phone-menu-item {
+	padding-top: 5px;
+	padding-left: 12px;
+	padding-bottom: 5px;
+	border-top: #dbdbdb 1px solid;
+}
+
+#phone-menu-item > a {
+	color: #808080;
+}
+
+#phone-menu-item > a:hover {
+	color: #A9A9A9;
+}
+
+/*
+* Header
+*/
+
+.header {
+	height: 100%;
+	padding: 0 0 0 0;
+}
+
+.header-affix {
+	background-color: #f4f4f4;
+	padding: 0 0 0 0;
+	height: 100%;
+}
+
+#divHeaderLogo {
+	padding-top: 20%;
+	height: 40%;
+}
+
+#divHeaderMenu {
+	padding-top: 15%;
+	height: 55%;
+}
+
+#divBottomLinks {
+	height: 5%;
+}
+
+.headerLogo {
+	border-radius: 50%;
+	border-color: #A9A9A9;
+	border-width: 1px;
+	border-style: solid;
+	height: auto;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#formMessage {
+	height: 100px;
+	resize: vertical;
+}
+
+.btn-contact-submit {
+	text-align: center;
+	width: 15%;
+}
+
+.btn-contact-close {
+	text-align: center;
+	width: 15%;
+}
+
+
+/*
+* Landing Page
+*/
+
+.landing {
+	background-image: url("../images/website_bg.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: block;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	z-index: -1;
+}
+
+.landing-titles {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	height: 40%;
+	text-align: right;
+	width: 100%;
+	color: black;
+	font-family: AdamCGPro;
+}
+
+.landing-top-space {
+	height: 39%;
+}
+
+.landing-bottom-space {
+	text-align: center;
+	height: 21%;
+}
+
+#landing-title {
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	font-size: 45px;
+}
+
+#landing-descriptors {
+	padding: 0 0 0 0;
+	font-size: 30px;
+}
+
+/*
+* About section on landing
+*/
+
+.landing-about {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #008080;
+	padding-bottom: 2%;
+}
+
+.about-area {
+	color: #f4f4f4;
+}
+
+.about-seperator {
+	height: 1px;
+	width: 100%;
+	background-color: #FF8C00;
+	margin-bottom: 2%;
+}
+
+.about-title {
+	font-family: AdamCGPro;
+}
+
+.about-container {
+	padding: 0 0 0 0;
+}
+
+.graph-title {
+	text-align: center;
+	font-family: AdamCGPro;
+}
+
+.about-graph {
+	text-align: center;
+	width: 50%;
+}
+
+.about-graph-1 {
+	text-align: center;
+	width: 100%;
+}
+
+/*
+* Experience section on landing
+*/
+
+.landing-experience {
+	padding-top: 2%;
+	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 2%;
+}
+
+.experience-seperator {
+	height: 1px;
+	width: 100%;
+	background-color: #008080;
+	margin-bottom: 2%;
+}
+
+.div-experience-job {
+	width: 100%;
+}
+
+/*
+* Project section on landing
+*/
+
+.landing-projects {
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #ED6A5A;
+}
+
+.project-panel-info {
+	font-family: AdamCGPro;
+	position: absolute;
+	top: 18%;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+}
+
+.project-image {
+	background-color: #fff;
+	border-color: #88A0A8;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 12px;
+	width: 80%;
+	height: auto;
+	min-width: 100%;
+}
+
+.project-panel-buttons a {
+	color: black;
+}
+
+.project-panel-buttons {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.project-button {
+	background-color: transparent;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	border-radius: 50px;
+}
+
+/*
+* Contact section on landing
+*/
+
+.landing-contact {
+	font-family: 'Open Sans', sans-serif;
+	padding-bottom: 2%;
+}
+
+.contact-title {
+	font-family: AdamCGPro;
+}
+
+.btn-submit {
+	background-color: transparent;
+	color: #006dcc;
+}
+
+.btn-submit:hover .fa-sub {
+	color: white;
+}
+
+/*
+* Bootstrap card imitation
+*/
+
+.card {
+	font-family: 'Rajdhani', sans-serif;
+	border: #00B7FF 1px solid;
+}
+
+.card-block {
+	padding-left: 15px;
+	text-align: left;
+}
+
+.card-date {
+	float: right;
+	padding-right: 15px;
+}
+
+/*
+* Blog
+*/
+
+.fa-plus {
+	color: #006dcc;
+}
+
+.actions {
+	text-align: left ;
+}
+
+.filter {
+	width: 100%;
+}
+
+.filter-section {
+	padding-right: 60px;
+}
+
+/*
+* Media queries
+*/
+
+@media screen and (min-width: 0px) and (max-width: 991px) {
+	.phone-seperator {
+		height: 60px;
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 766px) {
+	.project-panel-info {
+		top: 0%;
+	}
+
+	.project-name {
+		font-size: 8vw;
+	}
+
+	.project-type {
+		font-size: 6vw;
+	}
+
+	.btn-contact-submit {
+		width: 22%;
+	}
+
+	.btn-contact-close {
+		width: 22%;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 424px) {
+	.btn-contact-submit {
+		width: 28%;
+	}
+
+	.btn-contact-close {
+		width: 28%;
+	}
+}
+
+@media screen and (min-width: 0px) and (max-width: 1025px) {
+	#divHeaderLogo {
+		padding-top: 20%;
+		height: 38%;
+	}
+
+	#divHeaderMenu {
+		padding-top: 15%;
+		height: 55%;
+	}
+
+	#divBottomLinks {
+		height: 7%;
+	}
+
+	.footer {
+		padding-top: 5%;
+	}
+}
