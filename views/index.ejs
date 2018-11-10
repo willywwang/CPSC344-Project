@@ -20,12 +20,9 @@
 	<script src="javascripts/websiteApp.js"></script>
 	<script type="text/javascript" src="javascripts/controllers/header.controller.js"></script>
 	<script type="text/javascript" src='javascripts/controllers/home.controller.js'></script>
-	<script type="text/javascript" src='javascripts/controllers/contact.controller.js'></script>
-	<script type="text/javascript" src='javascripts/controllers/blog.controller.js'></script>
+	<script type="text/javascript" src='javascripts/controllers/shelf.controller.js'></script>
 	<script type="text/javascript" src='javascripts/controllers/modal.controller.js'></script>
 	<script type="text/javascript" src="javascripts/controllers/post.controller.js"></script>
-	<script type="text/javascript" src='javascripts/controllers/auth.controller.js'></script>
-	<script type="text/javascript" src='javascripts/directives/typedjs.directive.js'></script>
 	<script type="text/javascript" src="javascripts/services/auth.provider.js"></script>
 	<script type="text/javascript" src="javascripts/main.jquery.js"></script>
 
@@ -46,32 +43,34 @@
 <body ng-app="websiteApp" onresize="resizeHeader()">
 	<div class="container">
 		<div class="col-xs-12" ng-controller="headerController" style="padding-top:12px;display:inline-flex;">
-			<div class="menu-button" style="border-right: none;">
-				<h4 style="padding:10px">
+			<div class="menu-button" style="border-right: none;height:50px;">
+				<h4 style="padding:5px;padding-left:10px;padding-right:10px">
 					Shop Departments
 				</h4>
 			</div>
-			<div class="menu-button" style="border-right: none;">
-				<h4 style="padding:10px">
+			<div class="menu-button" style="border-right: none;height:50px">
+				<h4 style="padding:5px;padding-left:10px;padding-right:10px">
 					Weekly Flyer
 				</h4>
 			</div>
-			<div class="menu-button">
-				<h4 style="padding:10px">
+			<div class="menu-button" style="height:50px">
+				<h4 style="padding:5px;padding-left:10px;padding-right:10px">
 					Shop Recipes
 				</h4>
 			</div>
 			<div style="width:30px"></div>
-			<input type="text" ng-model="searchTerm" ng-change="searchUpdated()" placeholder="Search" style="padding:5px!important;width:40%!important"/>
-			<button ng-click="" type="button" style="width:50px">
+			<input type="text" ng-model="searchTerm" ng-change="searchUpdated()" placeholder="Search for items" style="padding:5px!important;width:40%!important;height:50px"/>
+			<button ng-click="" type="button" style="width:50px;height:50px">
 				<i class="fa fa-search" style="padding:5px!important"></i>
 			</button>
 			<div style="width:530px"></div>
-			<button ng-click="" type="button" style="width:50px">
+			<button ng-click="" type="button" style="width:50px;height:50px">
 				<i class="fa fa-user" style="padding:5px!important"></i>
 			</button>
-			<button ng-click="" type="button" style="width:50px">
-				<i class="fa fa-shopping-cart" style="padding:5px!important"></i>
+			<button ng-click="" type="button" style="width:50px;height:50px">
+				<div style="height:10px"></div>
+				<i class="fa fa-shopping-cart" style="padding:5px!important;"></i>
+				<span class="badge badge-notify" style="font-size:10px;">3</span>
 			</button>
 		</div>
 		<div class="col-xs-12" style="padding-top:25px">

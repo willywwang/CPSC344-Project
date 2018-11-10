@@ -28,10 +28,29 @@ a, a:hover, a:active, a:visited, a:focus {
 
 .menu-button:hover {
 	cursor: pointer;
+	background-color: #e0e0e0;
 }
+
+.badge-notify{
+   background:#4CD964;
+   position:relative;
+   top: -32px;
+   left: 10px;
+  }
 
 .section {
 	border: 1px black solid;
+}
+
+.section:hover {
+	cursor: pointer;
+	background-color: #e0e0e0;
+}
+
+.highlight {
+    outline: none;
+    border-color: #ecec77;
+    box-shadow: 0 0 50px #ecea20;
 }
 
 .row {
@@ -161,120 +180,6 @@ a, a:hover, a:active, a:visited, a:focus {
 .btn-error a {
 	color: black;
 }
-
-/*
-* Navigation Menu
-*/
-
-.menuList {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	font-size: 20px;
-	font-family: 'Rajdhani', sans-serif;
-}
-
-.menuList > li > a:hover {
-	text-decoration: none;
-}
-
-#menuListItem {
-	padding-bottom: 5px;
-}
-
-#menuListItem  > a {
-	color: #808080;
-}
-
-#menuListItem > a:hover {
-	color: #A9A9A9;
-}
-
-.div-phone-menu {
-	padding-top: 5px;
-}
-
-.btn-menu, .btn-menu:hover, .btn-menu:active, .btn-menu:visited, .btn-menu:focus {
-	outline: none;
-}
-
-.btn-menu:hover {
-	color: #bcbcbc;
-}
-
-.mobileMenu {
-	background: #f4f4f4
-}
-
-#phone-menu-item {
-	padding-top: 5px;
-	padding-left: 12px;
-	padding-bottom: 5px;
-	border-top: #dbdbdb 1px solid;
-}
-
-#phone-menu-item > a {
-	color: #808080;
-}
-
-#phone-menu-item > a:hover {
-	color: #A9A9A9;
-}
-
-/*
-* Header
-*/
-
-.header {
-	height: 100%;
-	padding: 0 0 0 0;
-}
-
-.header-affix {
-	background-color: #f4f4f4;
-	padding: 0 0 0 0;
-	height: 100%;
-}
-
-#divHeaderLogo {
-	padding-top: 20%;
-	height: 40%;
-}
-
-#divHeaderMenu {
-	padding-top: 15%;
-	height: 55%;
-}
-
-#divBottomLinks {
-	height: 5%;
-}
-
-.headerLogo {
-	border-radius: 50%;
-	border-color: #A9A9A9;
-	border-width: 1px;
-	border-style: solid;
-	height: auto;
-	width: 50%;
-	margin: 0 auto;
-}
-
-#formMessage {
-	height: 100px;
-	resize: vertical;
-}
-
-.btn-contact-submit {
-	text-align: center;
-	width: 15%;
-}
-
-.btn-contact-close {
-	text-align: center;
-	width: 15%;
-}
-
 
 /*
 * Landing Page
