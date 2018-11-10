@@ -1,6 +1,8 @@
 angular.module('websiteApp')
 .controller('headerController', ['$scope', '$rootScope', '$http', '$window', '$uibModal',
 	function($scope, $rootScope, $http, $window, $uibModal) {
+		$scope.shoppingCount = 0;
+
 		$scope.searchUpdated = function() {
 			$rootScope.$broadcast('searchUpdated', { searchTerm: $scope.searchTerm });
 
