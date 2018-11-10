@@ -15,12 +15,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
-	<script src="scripts/chart.js/dist/Chart.min.js"></script>
-	<script src="scripts/angular-chart.js/dist/angular-chart.min.js"></script>
 
-	<link rel="shortcut icon" type="image/x-icon" href="images/website-logo.jpg"/>
 	<link rel='stylesheet' href='/stylesheets/style.css' />
 	<script src="javascripts/websiteApp.js"></script>
+	<script type="text/javascript" src="javascripts/controllers/header.controller.js"></script>
 	<script type="text/javascript" src='javascripts/controllers/home.controller.js'></script>
 	<script type="text/javascript" src='javascripts/controllers/contact.controller.js'></script>
 	<script type="text/javascript" src='javascripts/controllers/blog.controller.js'></script>
@@ -48,27 +46,27 @@
 <body ng-app="websiteApp" onresize="resizeHeader()">
 	<div class="container">
 		<div class="col-xs-12" ng-controller="headerController" style="padding-top:12px;display:inline-flex;">
-			<div ng-click="" class="menu-button" style="border-right: none;">
+			<div class="menu-button" style="border-right: none;">
 				<h4 style="padding:10px">
 					Shop Departments
 				</h4>
 			</div>
-			<div ng-click="" class="menu-button" style="border-right: none;">
+			<div class="menu-button" style="border-right: none;">
 				<h4 style="padding:10px">
 					Weekly Flyer
 				</h4>
 			</div>
-			<div ng-click="" class="menu-button">
+			<div class="menu-button">
 				<h4 style="padding:10px">
 					Shop Recipes
 				</h4>
 			</div>
 			<div style="width:30px"></div>
-			<input type="text" ng-model="search" placeholder="Search" style="padding:5px!important;width:40%!important"/>
+			<input type="text" ng-model="searchTerm" ng-change="searchUpdated()" placeholder="Search" style="padding:5px!important;width:40%!important"/>
 			<button ng-click="" type="button" style="width:50px">
 				<i class="fa fa-search" style="padding:5px!important"></i>
 			</button>
-			<div style="width:450px"></div>
+			<div style="width:530px"></div>
 			<button ng-click="" type="button" style="width:50px">
 				<i class="fa fa-user" style="padding:5px!important"></i>
 			</button>
@@ -76,7 +74,7 @@
 				<i class="fa fa-shopping-cart" style="padding:5px!important"></i>
 			</button>
 		</div>
-		<div class="col-xs-12 view">
+		<div class="col-xs-12" style="padding-top:25px">
 			<div class="view" ng-view></div>
 		</div>
 	</div>

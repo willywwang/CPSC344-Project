@@ -26,6 +26,14 @@ a, a:hover, a:active, a:visited, a:focus {
 	border:1px lightgray solid;
 }
 
+.menu-button:hover {
+	cursor: pointer;
+}
+
+.section {
+	border: 1px black solid;
+}
+
 .row {
 	height: 100%;
 	width: 100%;
