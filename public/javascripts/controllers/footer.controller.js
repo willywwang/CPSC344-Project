@@ -1,6 +1,6 @@
 angular.module('websiteApp')
-.controller('footerController', ['$scope', '$rootScope', '$http', '$window', '$uibModal', '$location',
-	function($scope, $rootScope, $http, $window, $uibModal, $location) {
+.controller('footerController', ['$scope', '$rootScope', '$http', '$window', '$uibModal', '$location', 'toaster',
+	function($scope, $rootScope, $http, $window, $uibModal, $location, toaster) {
 		$scope.comparisonOn = true;
 
 		var items = {
@@ -61,6 +61,20 @@ angular.module('websiteApp')
 			}
 		}
 
+		$scope.clearComparisons = function() {
+			$scope.items = [];
+
+			Object.keys(items).forEach(function(key) {
+				$window.sessionStorage.removeItem('compare' + key);
+			});
+
+			toaster.pop({
+				type: 'info',
+				body: 'Comparisons removed'
+			});
+			$rootScope.$broadcast('comparisonCleared');
+		}
+
 		function findItems() {
 			$scope.items = [];
 
@@ -70,7 +84,7 @@ angular.module('websiteApp')
 				if (item) {
 					$scope.items.push(items[key]);
 				}
-			})
+			});
 		}
 
 		$scope.$on('comparisonUpdated', function(event, args) {

@@ -13,7 +13,7 @@ angular.module('websiteApp')
 		};
 
 		(function init() {
-			$window.sessionStorage.setItem('path', 'home');
+			$window.sessionStorage.setItem('path', 'shelf');
 			highlightObjects();
 		})();
 

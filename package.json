@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "angular-chart.js": "^1.1.1",
+    "angularjs-dropdown-multiselect": "^2.0.0-beta.10",
     "angularjs-toaster": "^2.2.0",
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
