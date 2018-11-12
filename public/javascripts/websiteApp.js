@@ -1,7 +1,8 @@
-var app = angular.module('websiteApp', ['ngRoute', 'ngResource', 'ui.bootstrap', 'underscore']);
+var app = angular.module('websiteApp', ['ngRoute', 'ngResource', 'ui.bootstrap', 'underscore', 'toaster']);
 
 app.run(['$rootScope', '$http', '$window', '$location',
 	function($rootScope, $http, $window, $location) {
+		$window.sessionStorage.setItem('comparison', true);
 	}]);
 
 app.config(function($routeProvider, $locationProvider)	 {
@@ -12,6 +13,10 @@ app.config(function($routeProvider, $locationProvider)	 {
 	.when('/shelf', {
 		templateUrl: 'shelf.html',
 		controller: 'shelfController'
+	})
+	.when('/comparison', {
+		templateUrl: 'comparison.html',
+		controller: 'comparisonController'
 	})
 	.otherwise({redirectTo: '/'})
 

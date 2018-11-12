@@ -1,42 +1,76 @@
 angular.module('websiteApp')
-.controller('shelfController', ['$scope', '$rootScope', '$http', '$window',
-	function($scope, $rootScope, $http, $window) {
-		$scope.name = $window.sessionStorage.getItem('name') || "";
-		$scope.email = $window.sessionStorage.getItem('email') || "";
-		$scope.message = $window.sessionStorage.getItem('message') || "";
-		$scope.showErrors = false;
-		$scope.showSuccess = false;
-		$scope.didUserSubmit = false;
+.controller('shelfController', ['$scope', '$rootScope', '$http', '$window', '$uibModal',
+	function($scope, $rootScope, $http, $window, $uibModal) {
+		var matchAll = ['seafood', 'fish'];
 
-		$scope.updateName = function() {
-			$window.sessionStorage.setItem('name', $scope.name);
-		}
+		$scope.isMatch = true;
+		$scope.highlightedObjects = {
+			'cod': false,
+			'grouper': false,
+			'haddock': false,
+			'salmon': false,
+			'halibut': false
+		};
 
-		$scope.updateEmail = function() {
-			$window.sessionStorage.setItem('email', $scope.email);
-		}
+		(function init() {
+			$window.sessionStorage.setItem('path', 'home');
+			highlightObjects();
+		})();
 
-		$scope.updateMessage = function() {
-			$window.sessionStorage.setItem('message', $scope.message);
-		}
-
-		$scope.submit = function() {
-			$scope.didUserSubmit = true;
-			var request = {
-				name: $scope.name,
-				email: $scope.email,
-				message: $scope.message
-			};
-
-			$http.post('/contact/email', request).success(function(data) {
-				if (data.state === "success") {
-					$scope.showSuccess = true;
-					$window.sessionStorage.clear();
-				} else {
-					$scope.showErrors = true;
+		$scope.openModal = function(itemName) {
+			$uibModal.open({
+				templateUrl: 'item-modal.html',
+				controller: 'itemModalController',
+				resolve: {
+					item: function() {
+						return itemName;
+					}
 				}
-
-				$scope.didUserSubmit = false;
 			});
 		}
+
+		function highlightObjects() {
+			var isAllMatch = false;
+			var searchTerm = $window.sessionStorage.getItem('search') || '';
+			var searchTerms = searchTerm.split(' ');
+
+			$scope.highlightedObjects = {
+				'cod': false,
+				'grouper': false,
+				'haddock': false,
+				'salmon': false,
+				'halibut': false
+			};
+
+			_.each(searchTerms, function(term) {
+				term = term.toLowerCase();
+				if (matchAll.includes(term)) {
+					isAllMatch = true;
+				} else if (term == 'cod') {
+					$scope.highlightedObjects['cod'] = true;
+				} else if (term == 'grouper') {
+					$scope.highlightedObjects['grouper'] = true;
+				} else if (term == 'haddock') {
+					$scope.highlightedObjects['haddock'] = true;
+				} else if (term == 'salmon') {
+					$scope.highlightedObjects['salmon'] = true;
+				} else if (term == 'halibut') {
+					$scope.highlightedObjects['halibut'] = true;
+				}
+			});
+
+			if (isAllMatch) {
+				$scope.highlightedObjects = {
+					'cod': true,
+					'grouper': true,
+					'haddock': true,
+					'salmon': true,
+					'halibut': true
+				};
+			}
+		}
+
+		$scope.$on('searchUpdated', function(event, args) {
+			highlightObjects();
+		});
 	}]);

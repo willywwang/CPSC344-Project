@@ -1,1 +1,44 @@
-<h1>shelf</h1>
+<div class="row">
+	<div class="col-xs-12">
+		<div class="col-xs-4">
+			<h1>Shelf</h1>
+		</div>
+		<div class="col-xs-8">
+			<a href="/" style="float:right;padding-top:25px">
+				<h4>
+					<i class="fa fa-arrow-left" style="color:#00B7FF"></i>&nbsp;Back to home
+				</h4>
+			</a>
+		</div>
+	</div>
+	<div class="col-xs-12" style="height:1px;background-color:lightgray"></div>
+	<div class="col-xs-12" style="height:30px"></div>
+	<div class="col-xs-12">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-1 section" style="text-align:center;height:400px" ng-class="{ highlight: highlightedObjects['cod'] }" ng-click="openModal('cod')">
+			<div style="height:170px"></div>
+			<h2>Cod</h2>
+		</div>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-1 section" style="text-align:center;height:400px" ng-class="{ highlight: highlightedObjects['grouper'] }" ng-click="openModal('grouper')">
+			<div style="height:170px"></div>
+			<h2>Grouper</h2>
+		</div>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-1 section" style="text-align:center;height:400px" ng-class="{ highlight: highlightedObjects['haddock'] }" ng-click="openModal('haddock')">
+			<div style="height:170px"></div>
+			<h2>Haddock</h2>
+		</div>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-1 section" style="text-align:center;height:400px" ng-class="{ highlight: highlightedObjects['salmon'] }" ng-click="openModal('salmon')">
+			<div style="height:170px"></div>
+			<h2>Salmon</h2>
+		</div>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-1 section" style="text-align:center;height:400px" ng-class="{ highlight: highlightedObjects['halibut'] }" ng-click="openModal('halibut')">
+			<div style="height:170px"></div>
+			<h2>Halibut</h2>
+		</div>
+		<div class="col-xs-1"></div>
+	</div>
+</div>

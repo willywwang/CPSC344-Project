@@ -42,9 +42,17 @@ a, a:hover, a:active, a:visited, a:focus {
 	border: 1px black solid;
 }
 
+.section1 {
+	border: 1px black solid;
+}
+
 .section:hover {
 	cursor: pointer;
 	background-color: #e0e0e0;
+}
+
+.modal-button:hover {
+	background-color: #939393;
 }
 
 .highlight {
@@ -120,7 +128,7 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .modal-title {
-	font-family: AdamCGPro;
+	font-family: 'Roboto', sans-serif;
 }
 
 .visible {
