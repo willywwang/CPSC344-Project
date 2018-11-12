@@ -90,8 +90,14 @@
 		<div class="col-xs-12" ng-controller="footerController" style="position: fixed;bottom:1%">
 			<div class="col-xs-12">
 				<button type="button" style="float:right;box-shadow:none;align-items:center" ng-click="clearComparisons()">
-					<i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;<b>Clear Comparisons</b>
+					<i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;Clear Comparisons
 				</button>
+				<div style="width:5px;height:2px;float:right"></div>
+				<a href="/comparison">
+					<button type="button" style="float:right;box-shadow:none;align-items:center;color:black!important">
+						<i class="fa fa-check-circle-o"></i>&nbsp;&nbsp;Compare Items
+					</button>
+				</a>
 				<div style="width:5px;height:2px;float:right"></div>
 				<button type="button" style="float:right;box-shadow:none;align-items:center" ng-click="toggleComparisons()">
 					<i class="fa" ng-class="{'fa-caret-up': !comparisonOn, 'fa-caret-down': comparisonOn}"></i>&nbsp;&nbsp;<b>Comparisons</b>
