@@ -57,7 +57,7 @@ app.use(function(err, req, res, next) {
 });
 
 setInterval(function() {
-    http.get("https://cpsc344-project.herokuapp.com/");
+    http.get("http://cpsc344-project.herokuapp.com");
 }, 300000);
 	
 module.exports = app;
