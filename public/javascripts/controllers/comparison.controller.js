@@ -30,7 +30,7 @@ angular.module('websiteApp')
 			label: 'Fresh'
 		}];
 
-		$scope.selectedCategories = [];
+		$scope.selectedCategories = $scope.categories;
 
 		var items = {
 			Cod: {

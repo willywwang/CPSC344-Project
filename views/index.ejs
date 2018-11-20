@@ -95,7 +95,7 @@
 				</h4>
 			</div>
 		</div>
-		<div class="col-xs-12" style="padding-top:25px">
+		<div class="col-xs-12" style="padding-left:0;padding-right:0;">
 			<div class="view" ng-view></div>
 		</div>
 		<!-- comparisons -->
@@ -116,10 +116,10 @@
 				</button>
 			</div>
 			<a href="/comparison">
-				<div class="col-xs-12 section" style="padding-top:10px;padding:10px;display:inline-flex" ng-if="comparisonOn">
+				<div class="col-xs-12 section1 compare" style="padding-top:10px;padding:10px;display:inline-flex" ng-if="comparisonOn">
 					<div style="width:10px"></div>
-					<div ng-repeat="item in items" class="section" style="margin-right:10px;text-align:center">
-						<img src="{{item.source}}" style="width: 125px"></img>
+					<div ng-repeat="item in items" class="section1" style="margin-right:10px;text-align:center">
+						<img src="{{item.source}}" style="width: 125px;border-bottom:1px solid black"></img>
 						<b><p style="color:black!important">{{item.title}}</p></b>
 					</div>
 					<div style="width:10px"></div>

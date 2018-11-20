@@ -1,4 +1,4 @@
-<div class="row" style="align-items: center">
+<div class="row" style="align-items: center;padding-top:25px;padding-left:20px;padding-right:20px;">
 	<div class="col-xs-2 section" style="text-align: center">
 		<h1>Dairy</h1>
 	</div>
@@ -7,7 +7,7 @@
 		<h1>Meat</h1>
 	</div>
 	<div class="col-xs-1"></div>
-	<div class="col-xs-3 section" style="text-align: center" ng-class="{ highlight: isMatch }" ng-click="openShelf()">
+	<div class="col-xs-3 section" style="text-align: center" ng-class="{ highlight: isAllMatch || isSeafoodMatch }" ng-click="openShelf()">
 		<h1>Seafood</h1>
 	</div>
 	<div class="col-xs-1"></div>
@@ -24,9 +24,9 @@
 		<div style="height:150px"></div>
 		<h1>Bulk</h1>
 	</div>
-	<div class="col-xs-1 section" style="height:400px;text-align: center">
+	<div class="col-xs-1 section" style="height:400px;text-align: center" ng-class="{ highlight: isAllMatch }">
 		<div style="height:150px"></div>
-		<h1>Drinks</h1>
+		<h1>Canned</h1>
 	</div>
 	<div class="col-xs-1 section" style="height:400px;text-align: center">
 		<div style="height:150px"></div>
@@ -76,7 +76,7 @@
 	</div>
 	<div class="col-xs-1"></div>
 	<div class="col-xs-12" style="height:30px"></div>
-	<div class="col-xs-2 section" style="text-align: center">
+	<div class="col-xs-2 section" style="text-align: center" ng-class="{ highlight: isAllMatch }">
 		<h1>Frozen</h1>
 	</div>
 	<div class="col-xs-1"></div>

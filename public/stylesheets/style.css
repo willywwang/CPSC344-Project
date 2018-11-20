@@ -22,6 +22,11 @@ a, a:hover, a:active, a:visited, a:focus {
 	text-decoration:none;
 }
 
+.fish-shelf {
+	background-image: url('/graphics/backgrounds/fish.bg.jpg');
+	background-size:cover;
+}
+
 .menu-button {
 	text-transform: uppercase;
 	font-family:sans-serif;
@@ -77,6 +82,14 @@ a, a:hover, a:active, a:visited, a:focus {
 	border: 1px black solid;
 }
 
+.compare {
+	background-color: #7ac253;
+}
+
+.compare:hover {
+	background-color: #57ab40;
+}
+
 .section1 {
 	border: 1px black solid;
 }
@@ -92,8 +105,8 @@ a, a:hover, a:active, a:visited, a:focus {
 
 .highlight {
     outline: none;
-    border-color: #ecec77;
-    box-shadow: 0 0 50px #ecea20;
+    border-color: #87ea90 !important;
+    box-shadow: 0 0 50px #57ab40;
 }
 
 .row {
