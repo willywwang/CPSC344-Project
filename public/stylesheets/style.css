@@ -27,6 +27,10 @@ a, a:hover, a:active, a:visited, a:focus {
 	background-size:cover;
 }
 
+.hover:hover {
+	cursor: pointer;
+}
+
 .menu-button {
 	text-transform: uppercase;
 	font-family:sans-serif;
