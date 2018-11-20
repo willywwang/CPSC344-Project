@@ -28,7 +28,7 @@
 	<script type="text/javascript" src='javascripts/controllers/shelf.controller.js'></script>
 	<script type="text/javascript" src="javascripts/controllers/comparison.controller.js"></script>
 	<script type="text/javascript" src='javascripts/controllers/item.modal.controller.js'></script>
-	<script type="text/javascript" src="javascripts/main.jquery.js"></script>
+	<script type="text/javascript" src="javascripts/directives/enter.directive.js"></script>
 
 	<script type="text/javascript" src="components/underscore/underscore.js"></script>
 	<script type="text/javascript" src="components/angular-underscore-module/angular-underscore-module.js"></script>
@@ -46,42 +46,54 @@
 </head>
 <body ng-app="websiteApp" onresize="resizeHeader()">
 	<div class="container">
-		<div class="col-xs-12" ng-controller="headerController" style="padding-top:12px;display:inline-flex;">
+		<div class="col-xs-12" style="align-items: center">
+			<img style="height:60px;margin:5px;margin-left: auto;margin-right: auto;display: block;" src="graphics/logos/logo.png"/>
+		</div>
+		<div class="col-xs-12" ng-controller="headerController" style="display:inline-flex;background-color:#7ac253;box-shadow:#d3d3d3 0 4px 4px -2px">
 			<toaster-container toaster-options="{'close-button': true, 'time-out': 3500}"></toaster-container>
-			<div class="menu-button" style="border-right: none;height:50px;">
-				<h4 style="padding:5px;padding-left:10px;padding-right:10px">
-					Shop Departments
+			<div style="width:20px"></div>
+			<div class="menu-button" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40;box-sizing: border-box">
+				<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
+					Shop<br/>Departments
 				</h4>
 			</div>
-			<div class="menu-button" style="border-right: none;height:50px">
-				<h4 style="padding:5px;padding-left:10px;padding-right:10px">
-					Weekly Flyer
+			<div class="menu-button" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40">
+				<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
+					Weekly<br/>Flyer
 				</h4>
 			</div>
-			<div class="menu-button" style="height:50px">
-				<h4 style="padding:5px;padding-left:10px;padding-right:10px">
-					Shop Recipes
+			<div class="menu-button" style="height:60px;display:table">
+				<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
+					Shop<br/>Recipes
 				</h4>
 			</div>
-			<div style="width:30px"></div>
-			<input type="text" ng-model="searchTerm" ng-change="searchUpdated()" placeholder="Search for items" style="padding:5px!important;width:40%!important;height:50px"/>
-			<button ng-click="" type="button" style="width:50px;height:50px">
-				<i class="fa fa-search" style="padding:5px!important"></i>
-			</button>
-			<div style="width:475px"></div>
-			<a href="/">
-				<button ng-click="" type="button" style="width:50px;height:50px">
-					<i class="fa fa-home" style="padding:5px!important"></i>
-				</button>
-			</a>
-			<button ng-click="" type="button" style="width:50px;height:50px">
-				<i class="fa fa-user" style="padding:5px!important"></i>
-			</button>
-			<button ng-click="" type="button" style="width:50px;height:50px">
-				<div style="height:10px"></div>
-				<i class="fa fa-shopping-cart" style="padding:5px!important;"></i>
-				<span class="badge badge-notify" style="font-size:10px;">{{shoppingCount}}</span>
-			</button>
+			<div style="width:10px"></div>
+			<div style="position:relative;width:50%!important;height:45px;">
+				<input class="search" type="text" ng-model="searchTerm" placeholder="Search for items" style="padding:5px!important;margin-top:7.5px;border:none;padding-left:20px!important;height:45px" enter="search()"/>
+				<button class="search-button" ng-click="search()">Go</button>
+			</div>
+			<div style="width:10px"></div>
+			<div class="menu-button-1" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40;box-sizing: border-box">
+				<img style="height:60px" src="graphics/logos/Profile.png"/>
+				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
+					SIGN IN /<br/>REGISTER
+				</h4>
+			</div>
+			<div class="menu-button-1" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40">
+				<img style="height:60px" src="graphics/logos/Calendar.png"/>
+				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
+					RESERVE<br/>TIME SLOT
+				</h4>
+			</div>
+			<div class="menu-button-1" style="height:60px;display:table">
+				<div style="position:relative;">
+					<img style="height:60px" src="graphics/logos/Cart.png"/>
+					<span class="badge badge-notify" style="font-size:10px;">{{shoppingCount}}</span>
+				</div>
+				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
+					MY CART
+				</h4>
+			</div>
 		</div>
 		<div class="col-xs-12" style="padding-top:25px">
 			<div class="view" ng-view></div>

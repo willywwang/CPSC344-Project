@@ -3,7 +3,7 @@ angular.module('websiteApp')
 	function($scope, $rootScope, $http, $window, $uibModal) {
 		$scope.shoppingCount = 0;
 
-		$scope.searchUpdated = function() {
+		$scope.search = function() {
 			if ($scope.searchTerm) {
 				$window.sessionStorage.setItem('search', $scope.searchTerm);
 			} else {
@@ -11,7 +11,7 @@ angular.module('websiteApp')
 			}
 
 			$rootScope.$broadcast('searchUpdated', { searchTerm: $scope.searchTerm });
-		};
+		};	
 
 		$scope.$on('shoppingCartAdd', function(event, args) {
 			$scope.shoppingCount++;
@@ -25,7 +25,7 @@ angular.module('websiteApp')
 
 		($scope.init = function() {
 			$scope.searchTerm = $window.sessionStorage.getItem('search') || "";
-			$scope.searchUpdated();
+			$scope.search();
 
 			var count = $window.sessionStorage.getItem('shoppingCount') || '0';
 			$scope.shoppingCount = parseInt(count);
