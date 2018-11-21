@@ -27,6 +27,11 @@ a, a:hover, a:active, a:visited, a:focus {
 	background-size:cover;
 }
 
+.brick-shelf {
+	background-image: url('/graphics/backgrounds/shelf.jpg');
+	background-size:cover;
+}
+
 .hover:hover {
 	cursor: pointer;
 }
@@ -73,6 +78,7 @@ a, a:hover, a:active, a:visited, a:focus {
 	top:0%;
 	right:0%;
 	margin-top:9.5px;
+	outline: none;
 }
 
 .badge-notify{
@@ -80,18 +86,22 @@ a, a:hover, a:active, a:visited, a:focus {
    position:absolute;
    bottom: 5px;
    right: 0px;
-  }
+}
+
+.remove-button {
+	outline: none;
+}
+
+.remove-button:hover {
+	background-color: #ff2626!important;
+}
 
 .section {
 	border: 1px black solid;
 }
 
 .compare {
-	background-color: #7ac253;
-}
-
-.compare:hover {
-	background-color: #57ab40;
+	background-color: white;
 }
 
 .section1 {
@@ -104,7 +114,7 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .modal-button:hover {
-	background-color: #939393;
+	background-color: #bdbcbc!important;
 }
 
 .highlight {
@@ -404,19 +414,6 @@ a, a:hover, a:active, a:visited, a:focus {
 	border-radius: 50px;
 }
 
-/*
-* Contact section on landing
-*/
-
-.landing-contact {
-	font-family: 'Open Sans', sans-serif;
-	padding-bottom: 2%;
-}
-
-.contact-title {
-	font-family: AdamCGPro;
-}
-
 .btn-submit {
 	background-color: transparent;
 	color: #006dcc;
@@ -424,6 +421,47 @@ a, a:hover, a:active, a:visited, a:focus {
 
 .btn-submit:hover .fa-sub {
 	color: white;
+}
+
+.btn-close {
+	border-color: #edecec;
+	background-color: #edecec;
+	color: black;
+}
+
+.btn-close:hover {
+	border-color: #bdbcbc;
+	background-color: #bdbcbc;
+	color:black;
+}
+
+.btn-close:focus {
+	border-color: #bdbcbc;
+	background-color: #bdbcbc;
+	color:black;
+}
+
+.btn-redirect {
+	border-color: #7ac253;
+	background-color: #7ac253;
+	color: white;
+	border-radius:0;
+	outline:none;
+	height:50px;
+}
+
+.btn-redirect:hover {
+	border-color: #57ab40;
+	background-color: #57ab40;
+	color:white;
+	outline:none;
+}
+
+.btn-redirect:focus {
+	border-color: #57ab40;
+	background-color: #57ab40;
+	color:white;
+	outline:none;
 }
 
 /*
@@ -443,87 +481,4 @@ a, a:hover, a:active, a:visited, a:focus {
 .card-date {
 	float: right;
 	padding-right: 15px;
-}
-
-/*
-* Blog
-*/
-
-.fa-plus {
-	color: #006dcc;
-}
-
-.actions {
-	text-align: left ;
-}
-
-.filter {
-	width: 100%;
-}
-
-.filter-section {
-	padding-right: 60px;
-}
-
-/*
-* Media queries
-*/
-
-@media screen and (min-width: 0px) and (max-width: 991px) {
-	.phone-seperator {
-		height: 60px;
-		width: 100%;
-	}
-}
-
-@media screen and (min-width: 0px) and (max-width: 766px) {
-	.project-panel-info {
-		top: 0%;
-	}
-
-	.project-name {
-		font-size: 8vw;
-	}
-
-	.project-type {
-		font-size: 6vw;
-	}
-
-	.btn-contact-submit {
-		width: 22%;
-	}
-
-	.btn-contact-close {
-		width: 22%;
-	}
-}
-
-@media screen and (min-width: 0px) and (max-width: 424px) {
-	.btn-contact-submit {
-		width: 28%;
-	}
-
-	.btn-contact-close {
-		width: 28%;
-	}
-}
-
-@media screen and (min-width: 0px) and (max-width: 1025px) {
-	#divHeaderLogo {
-		padding-top: 20%;
-		height: 38%;
-	}
-
-	#divHeaderMenu {
-		padding-top: 15%;
-		height: 55%;
-	}
-
-	#divBottomLinks {
-		height: 7%;
-	}
-
-	.footer {
-		padding-top: 5%;
-	}
 }

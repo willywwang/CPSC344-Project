@@ -7,35 +7,80 @@ angular.module('websiteApp')
 				price: '$3.99/lb',
 				origin: 'Norway',
 				description: 'Fillet, fresh',
-				source: '/images/cod.jpg'
+				source: '/graphics/Fish/fish-wbg/cod.jpg',
+				search: 'Cod'
 			},
 			grouper: {
 				title: 'Grouper',
 				price: '$9.99/lb',
 				origin: 'Australia',
 				description: 'Whole, gutted, fresh',
-				source: '/images/grouper.jpg'
+				source: '/graphics/Fish/fish-wbg/grouper.jpg',
+				search: 'Grouper'
 			},
 			halibut: {
 				title: 'Halibut',
 				price: '$15.99/lb',
 				origin: 'Alaska',
 				description: 'Fillet, fresh',
-				source: '/images/halibut.jpg'
+				source: '/graphics/Fish/fish-wbg/halibut.jpg',
+				search: 'Halibut'
 			},
 			haddock: {
 				title: 'Haddock',
 				price: '$12.99/lb',
 				origin: 'Russia',
 				description: 'Fillet, frozen',
-				source: '/images/haddock.jpg'
+				source: '/graphics/Fish/fish-wbg/haddock.jpg',
+				search: 'Haddock'
 			},
 			salmon: {
 				title: 'Salmon',
 				price: '$11.99/lb',
 				origin: 'Victoria',
 				description: 'Whole, fresh',
-				source: '/images/salmon.jpg'
+				source: '/graphics/Fish/fish-wbg/Salmon.jpg',
+				search: 'Salmon'
+			},
+			campbellbeef: {
+				title: 'Campbell\'s Beef Stock',
+				price: '$3.39',
+				volume: '900 mL',
+				description: 'Beef stock, low sodium',
+				source: '/graphics/stock_broth/stock/campbellbeef.png',
+				search: 'CampbellBeef'
+			},
+			kitchenchicken: {
+				title: 'Kitchen Basics Chicken Stock',
+				price: '$4.49',
+				volume: '946 mL',
+				description: 'Chicken stock',
+				source: '/graphics/stock_broth/stock/kitchenchicken.png',
+				search: 'KitchenChicken'
+			},
+			swansonbeef: {
+				title: 'Swanson Beef Stock',
+				price: '$3.99',
+				volume: '907 mL',
+				description: 'Beef stock, low sodium',
+				source: '/graphics/stock_broth/stock/swansonbeef.png',
+				search: 'SwansonBeef'
+			},
+			swansonchicken: {
+				title: 'Swanson Chicken Broth',
+				price: '$3.29',
+				volume: '907 mL',
+				description: 'Chicken stock',
+				source: '/graphics/stock_broth/stock/swansonchicken.png',
+				search: 'SwansonChicken'
+			},
+			vegetable: {
+				title: 'Pacific Vegetable Broth',
+				price: '$4.99',
+				volume: '946 mL',
+				description: 'Vegetable stock, organic, low sodium',
+				source: '/graphics/stock_broth/stock/vegetable.png',
+				search: 'Vegetable'
 			}
 		};
 
@@ -44,7 +89,7 @@ angular.module('websiteApp')
 			var quantity = $window.sessionStorage.getItem(item) || '0';
 			$scope.item.quantity = parseInt(quantity);
 
-			var isCompared = $window.sessionStorage.getItem('compare' + $scope.item.title);
+			var isCompared = $window.sessionStorage.getItem('compare' + $scope.item.search);
 
 			if (isCompared) {
 				$scope.isCompared = true;
@@ -73,9 +118,9 @@ angular.module('websiteApp')
 
 		$scope.updateComparison = function() {
 			if ($scope.isCompared) {
-				$window.sessionStorage.setItem('compare' + $scope.item.title, true);
+				$window.sessionStorage.setItem('compare' + $scope.item.search, true);
 			} else {
-				$window.sessionStorage.removeItem('compare' + $scope.item.title);
+				$window.sessionStorage.removeItem('compare' + $scope.item.search);
 			}
 
 			$rootScope.$broadcast('comparisonUpdated');

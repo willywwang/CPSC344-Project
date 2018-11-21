@@ -17,7 +17,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.7/typed.min.js"></script>
+    <script data-require="lodash.js@*" data-semver="3.10.0" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.0/lodash.js"></script>
 	<script src="scripts/angularjs-dropdown-multiselect/dist/src/angularjs-dropdown-multiselect.js"></script>
 
 	<link rel='stylesheet' href='/stylesheets/style.css' />
@@ -29,9 +29,6 @@
 	<script type="text/javascript" src="javascripts/controllers/comparison.controller.js"></script>
 	<script type="text/javascript" src='javascripts/controllers/item.modal.controller.js'></script>
 	<script type="text/javascript" src="javascripts/directives/enter.directive.js"></script>
-
-	<script type="text/javascript" src="components/underscore/underscore.js"></script>
-	<script type="text/javascript" src="components/angular-underscore-module/angular-underscore-module.js"></script>
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -46,8 +43,11 @@
 </head>
 <body ng-app="websiteApp" onresize="resizeHeader()">
 	<div class="container">
-		<div class="col-xs-12" style="align-items: center">
-			<img style="height:60px;margin:5px;margin-left: auto;margin-right: auto;display: block;" src="graphics/logos/logo.png"/>
+		<div class="col-xs-12" style="display:inline-flex;">
+			<div style="width:375px;height:1px"></div>
+			<a href="/">
+				<img style="height:50px;margin:5px;" src="graphics/logos/logo.png"/>
+			</a>
 		</div>
 		<div class="col-xs-12" ng-controller="headerController" style="display:inline-flex;background-color:#7ac253;box-shadow:#d3d3d3 0 4px 4px -2px">
 			<toaster-container toaster-options="{'close-button': true, 'time-out': 3500}"></toaster-container>
@@ -119,8 +119,16 @@
 				<div class="col-xs-12 section1 compare" style="padding-top:10px;padding:10px;display:inline-flex" ng-if="comparisonOn">
 					<div style="width:10px"></div>
 					<div ng-repeat="item in items" class="section1" style="margin-right:10px;text-align:center">
-						<img src="{{item.source}}" style="width: 125px;border-bottom:1px solid black"></img>
-						<b><p style="color:black!important">{{item.title}}</p></b>
+						<div style="position:relative;border-bottom:1px solid black;width:175px;">
+							<img src="{{item.source}}" style="width:75%"></img>
+							<button class="remove-button" style="color:white;background-color:#ff5959;border:none;position:absolute;top:3%;right:3%" 
+									ng-click="removeItem(item); $event.stopPropagation(); $event.preventDefault();">
+								<i class="fa fa-times" style="color:white;"></i>
+							</button>
+						</div>
+						<div style="height:27px;background-color:#edecec">
+							<b><p style="color:black!important;padding-top:5px;padding-bottom:5px">{{item.title}}</p></b>
+						</div>
 					</div>
 					<div style="width:10px"></div>
 				</div>

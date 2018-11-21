@@ -2,15 +2,15 @@ angular.module('websiteApp')
 .controller('homeController', ['$scope', '$rootScope', '$http', '$window', '$uibModal', '$location',
 	function($scope, $rootScope, $http, $window, $uibModal, $location) {
 		// the only terms we are accepting for prototype
-		var seafoodTerms = ['cod', 'grouper', 'haddock', 'halibut', 'salmon'];
-		var allTerms = ['seafood', 'fish'];
+		var seafoodTerms = ['seafood', 'fish', 'cod', 'grouper', 'haddock', 'halibut', 'salmon'];
+		var canTerms = ['stock', 'broth', 'campbell', 'vegetable', 'chicken', 'beef', 'soup', 'can', 'cans', 'campbell\'s', 'kitchen', 'swanson'];
 
 		// var to determine if search term matches the prototype
-		$scope.isAllMatch = false;
+		$scope.isCanMatch = false;
 		$scope.isSeafoodMatch = false;
 
 		(function init() {
-			$window.sessionStorage.setItem('path', 'home');
+			$window.sessionStorage.setItem('path', 'Store Map');
 			determineMatch();
 		})();
 
@@ -18,19 +18,22 @@ angular.module('websiteApp')
 			var searchTerm = $window.sessionStorage.getItem('search') || '';
 			var searchTerms = searchTerm.split(' ');
 
-			$scope.isAllMatch = false;
+			$scope.isCanMatch = false;
 			$scope.isSeafoodMatch = false;
 
 			_.each(searchTerms, function(term) {
 				if (seafoodTerms.includes(term.toLowerCase())) {
 					$scope.isSeafoodMatch = true;
-				} else if (allTerms.includes(term.toLowerCase())) {
-					$scope.isAllMatch = true;
+				} 
+
+				if (canTerms.includes(term.toLowerCase())) {
+					$scope.isCanMatch = true;
 				}
 			});
 		}
 
-		$scope.openShelf = function() {
+		$scope.openShelf = function(category) {
+			$window.sessionStorage.setItem('shelf', category);
 			$location.path('/shelf');
 		}
 

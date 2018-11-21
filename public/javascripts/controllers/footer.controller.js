@@ -4,40 +4,55 @@ angular.module('websiteApp')
 		$scope.comparisonOn = true;
 
 		var items = {
-			Cod: {
+			cod: {
 				title: 'Cod',
-				price: '$3.99/lb',
-				origin: 'Norway',
-				description: 'Fillet, fresh',
-				source: '/images/cod.jpg'
+				source: '/graphics/Fish/fish-wbg/cod.jpg',
+				search: 'Cod'
 			},
-			Grouper: {
+			grouper: {
 				title: 'Grouper',
-				price: '$9.99/lb',
-				origin: 'Australia',
-				description: 'Whole, gutted, fresh',
-				source: '/images/grouper.jpg'
+				source: '/graphics/Fish/fish-wbg/grouper.jpg',
+				search: 'Grouper'
 			},
-			Halibut: {
+			halibut: {
 				title: 'Halibut',
-				price: '$15.99/lb',
-				origin: 'Alaska',
-				description: 'Fillet, fresh',
-				source: '/images/halibut.jpg'
+				source: '/graphics/Fish/fish-wbg/halibut.jpg',
+				search: 'Halibut'
 			},
-			Haddock: {
+			haddock: {
 				title: 'Haddock',
-				price: '$12.99/lb',
-				origin: 'Russia',
-				description: 'Fillet, frozen',
-				source: '/images/haddock.jpg'
+				source: '/graphics/Fish/fish-wbg/haddock.jpg',
+				search: 'Haddock'
 			},
-			Salmon: {
+			salmon: {
 				title: 'Salmon',
-				price: '$11.99/lb',
-				origin: 'Victoria',
-				description: 'Whole, fresh',
-				source: '/images/salmon.jpg'
+				source: '/graphics/Fish/fish-wbg/Salmon.jpg',
+				search: 'Salmon'
+			},
+			campbellbeef: {
+				title: 'Campbell\'s Beef Stock',
+				source: '/graphics/stock_broth/stock-wbg/campbellbeef.jpg',
+				search: 'CampbellBeef'
+			},
+			kitchenchicken: {
+				title: 'Kitchen Basics Chicken Stock',
+				source: '/graphics/stock_broth/stock-wbg/kitchenchicken.jpg',
+				search: 'KitchenChicken'
+			},
+			swansonbeef: {
+				title: 'Swanson Beef Stock',
+				source: '/graphics/stock_broth/stock-wbg/swansonbeef.jpg',
+				search: 'SwansonBeef'
+			},
+			swansonchicken: {
+				title: 'Swanson Chicken Broth',
+				source: '/graphics/stock_broth/stock-wbg/swansonchicken.jpg',
+				search: 'SwansonChicken'
+			},
+			vegetable: {
+				title: 'Pacific Vegetable Broth',
+				source: '/graphics/stock_broth/stock-wbg/vegetable.jpg',
+				search: 'Vegetable'
 			}
 		};
 
@@ -50,6 +65,17 @@ angular.module('websiteApp')
 				$scope.comparisonOn = false;
 			}
 		})();
+
+		$scope.removeItem = function(item) {
+			$window.sessionStorage.removeItem('compare' + item.search);
+
+			toaster.pop({
+				type: 'info',
+				body: item.title + ' removed from comparison'
+			});
+
+			$rootScope.$broadcast('comparisonUpdated');
+		}
 
 		$scope.toggleComparisons = function() {
 			$scope.comparisonOn = !$scope.comparisonOn
@@ -65,7 +91,8 @@ angular.module('websiteApp')
 			$scope.items = [];
 
 			Object.keys(items).forEach(function(key) {
-				$window.sessionStorage.removeItem('compare' + key);
+				var item = items[key]
+				$window.sessionStorage.removeItem('compare' + item.search);
 			});
 
 			toaster.pop({
@@ -79,7 +106,8 @@ angular.module('websiteApp')
 			$scope.items = [];
 
 			Object.keys(items).forEach(function(key) {
-				var item = $window.sessionStorage.getItem('compare' + key);
+				var object = items[key];
+				var item = $window.sessionStorage.getItem('compare' + object.search);
 
 				if (item) {
 					$scope.items.push(items[key]);

@@ -1,38 +1,19 @@
-<div class="row fish-shelf" style="height:800px;overflow-y: hidden">
-	<div class="col-xs-12">
-		<div class="col-xs-4">
-			<h1 style="font-family:sans-serif;">SHELF</h1>
-		</div>
-		<div class="col-xs-8">
-			<a href="/" style="float:right;padding-top:25px">
-				<h4>
-					<i class="fa fa-arrow-left" style="color:#00B7FF"></i>&nbsp;Back to store map
-				</h4>
-			</a>
-		</div>
+<div class="row" style="height:825px;overflow-y: hidden" ng-class="{'fish-shelf': isSeafood, 'brick-shelf': !isSeafood}">
+	<div class="col-xs-12" style="padding-top:20px">
+		<a href="/" style="float:right;padding-top:10px">
+			<button class="btn btn-redirect">
+				<i class="fa fa-arrow-left" style="color:white"></i>&nbsp;&nbsp;Back to Store Map
+			</button>
+		</a>
 	</div>
 	<div class="col-xs-12" style="height:170px"></div>
 	<div class="col-xs-12 " style="display:inline-flex;">
-		<div style="width:100px"></div>
-		<div class="hover" style="text-align:center;width:250px;height:225px" ng-click="openModal('cod')">
-			<img style="width:200px;padding-bottom:15px" src="/graphics/Fish/fish/Cod.png"/>
-		</div>
 		<div style="width:150px"></div>
-		<div class="hover" style="text-align:center;width:250px;height:225px" ng-click="openModal('grouper')">
-			<img style="width:200px;padding-bottom:15px" src="/graphics/Fish/fish/Grouper.png"/>
+		<div ng-repeat="item in items" style="display:inline-flex;">
+			<div class="hover" style="text-align:center;width:250px;height:225px" ng-click="openModal(item.link)">
+				<img style="width:190px;padding-bottom:15px" src="{{item.source}}"/>
+			</div>
+			<div style="width:100px"></div>
 		</div>
-		<div style="width:150px"></div>
-		<div class="hover" style="text-align:center;width:250px;height:225px" ng-click="openModal('haddock')">
-			<img style="width:200px;padding-bottom:15px" src="/graphics/Fish/fish/Haddock.png"/>
-		</div>
-		<div style="width:150px"></div>
-		<div class="hover" style="text-align:center;width:250px;height:225px" ng-click="openModal('salmon')">
-			<img style="width:200px;padding-bottom:15px" src="/graphics/Fish/fish/Salmon.png"/>
-		</div>
-		<div style="width:150px"></div>
-		<div class="hover" style="text-align:center;width:250px;height:225px" ng-click="openModal('halibut')">
-			<img style="width:200px;padding-bottom:15px" src="/graphics/Fish/fish/Halibut.png"/>
-		</div>
-		<div style="width:100px"></div>
 	</div>
 </div>
