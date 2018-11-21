@@ -210,7 +210,7 @@ angular.module('websiteApp')
 		$scope.changeQuantity = function(operation, item) {
 			if (operation === '-') {
 				item.quantity--;
-				$window.sessionStorage.setItem(item, $scope.item.quantity);
+				$window.sessionStorage.setItem(item, item.quantity);
 				$rootScope.$broadcast('shoppingCartRemove');
 				toaster.pop({
 					type: 'info',
@@ -218,7 +218,7 @@ angular.module('websiteApp')
 				});
 			} else {
 				item.quantity++;
-				$window.sessionStorage.setItem(item, $scope.item.quantity);
+				$window.sessionStorage.setItem(item, item.quantity);
 				$rootScope.$broadcast('shoppingCartAdd');
 				toaster.pop({
 					type: 'info',
