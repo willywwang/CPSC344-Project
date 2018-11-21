@@ -59,6 +59,6 @@ angular.module('websiteApp')
 				}
 			});
 
-			$scope.cost = Math.round($scope.cost * 100) / 100
+			$scope.cost = parseFloat(Math.round($scope.cost * 100) / 100).toFixed(2);
 		}
 	}]);

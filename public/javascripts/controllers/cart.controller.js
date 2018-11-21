@@ -63,6 +63,6 @@ angular.module('websiteApp')
 				}
 			});
 
-			$scope.totalPrice = Math.round($scope.totalPrice * 100) / 100
+			$scope.totalPrice = parseFloat(Math.round($scope.totalPrice * 100) / 100).toFixed(2);
 		}
 	}]);
