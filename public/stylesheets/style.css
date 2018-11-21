@@ -97,7 +97,7 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .section {
-	border: 1px black solid;
+	border: 1px #d5d4d4 solid;
 }
 
 .compare {
@@ -105,12 +105,12 @@ a, a:hover, a:active, a:visited, a:focus {
 }
 
 .section1 {
-	border: 1px black solid;
+	border: 1px #d5d4d4 solid;
 }
 
 .section:hover {
 	cursor: pointer;
-	background-color: #e0e0e0;
+	background-color: #7ac253;
 }
 
 .modal-button:hover {

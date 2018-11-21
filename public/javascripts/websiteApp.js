@@ -16,6 +16,10 @@ app.config(function($routeProvider, $locationProvider)	 {
 		templateUrl: 'comparison.html',
 		controller: 'comparisonController'
 	})
+	.when('/cart', {
+		templateUrl: 'cart.html',
+		controller: 'cartController' 
+	})
 	.otherwise({redirectTo: '/'})
 
 	$locationProvider.html5Mode(true);

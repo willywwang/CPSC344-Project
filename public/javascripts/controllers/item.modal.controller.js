@@ -7,7 +7,7 @@ angular.module('websiteApp')
 				price: '$3.99/lb',
 				origin: 'Norway',
 				description: 'Fillet, fresh',
-				source: '/graphics/Fish/fish-wbg/cod.jpg',
+				source: '/graphics/Fish/fish-wbg/Cod.jpg',
 				search: 'Cod'
 			},
 			grouper: {
@@ -15,7 +15,7 @@ angular.module('websiteApp')
 				price: '$9.99/lb',
 				origin: 'Australia',
 				description: 'Whole, gutted, fresh',
-				source: '/graphics/Fish/fish-wbg/grouper.jpg',
+				source: '/graphics/Fish/fish-wbg/Grouper.jpg',
 				search: 'Grouper'
 			},
 			halibut: {
@@ -23,7 +23,7 @@ angular.module('websiteApp')
 				price: '$15.99/lb',
 				origin: 'Alaska',
 				description: 'Fillet, fresh',
-				source: '/graphics/Fish/fish-wbg/halibut.jpg',
+				source: '/graphics/Fish/fish-wbg/Halibut.jpg',
 				search: 'Halibut'
 			},
 			haddock: {
@@ -31,7 +31,7 @@ angular.module('websiteApp')
 				price: '$12.99/lb',
 				origin: 'Russia',
 				description: 'Fillet, frozen',
-				source: '/graphics/Fish/fish-wbg/haddock.jpg',
+				source: '/graphics/Fish/fish-wbg/Haddock.jpg',
 				search: 'Haddock'
 			},
 			salmon: {
@@ -99,6 +99,7 @@ angular.module('websiteApp')
 		$scope.changeQuantity = function(operation) {
 			if (operation === '-') {
 				$scope.item.quantity--;
+				$window.sessionStorage.setItem(item, $scope.item.quantity);
 				$rootScope.$broadcast('shoppingCartRemove');
 				toaster.pop({
 					type: 'info',
@@ -106,14 +107,13 @@ angular.module('websiteApp')
 				});
 			} else {
 				$scope.item.quantity++;
+				$window.sessionStorage.setItem(item, $scope.item.quantity);
 				$rootScope.$broadcast('shoppingCartAdd');
 				toaster.pop({
 					type: 'info',
 					body: $scope.item.title + ' added to cart'
 				});
 			}
-
-			$window.sessionStorage.setItem(item, $scope.item.quantity);
 		}
 
 		$scope.updateComparison = function() {

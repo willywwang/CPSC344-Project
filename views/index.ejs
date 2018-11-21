@@ -27,6 +27,7 @@
 	<script type="text/javascript" src='javascripts/controllers/home.controller.js'></script>
 	<script type="text/javascript" src='javascripts/controllers/shelf.controller.js'></script>
 	<script type="text/javascript" src="javascripts/controllers/comparison.controller.js"></script>
+	<script type="text/javascript" src="javascripts/controllers/cart.controller.js"></script>
 	<script type="text/javascript" src='javascripts/controllers/item.modal.controller.js'></script>
 	<script type="text/javascript" src="javascripts/directives/enter.directive.js"></script>
 
@@ -90,8 +91,9 @@
 					<img style="height:60px" src="graphics/logos/Cart.png"/>
 					<span class="badge badge-notify" style="font-size:10px;">{{shoppingCount}}</span>
 				</div>
-				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
-					MY CART
+				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle" href="/cart">
+					MY CART<br/>
+					{{'$' + cost}}
 				</h4>
 			</div>
 		</div>
@@ -119,7 +121,7 @@
 				<div class="col-xs-12 section1 compare" style="padding-top:10px;padding:10px;display:inline-flex" ng-if="comparisonOn">
 					<div style="width:10px"></div>
 					<div ng-repeat="item in items" class="section1" style="margin-right:10px;text-align:center">
-						<div style="position:relative;border-bottom:1px solid black;width:175px;">
+						<div style="position:relative;border-bottom:1px solid #d5d4d4;width:175px;">
 							<img src="{{item.source}}" style="width:75%"></img>
 							<button class="remove-button" style="color:white;background-color:#ff5959;border:none;position:absolute;top:3%;right:3%" 
 									ng-click="removeItem(item); $event.stopPropagation(); $event.preventDefault();">

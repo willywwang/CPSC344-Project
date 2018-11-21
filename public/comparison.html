@@ -1,7 +1,7 @@
 <div class="row" style="padding-top:25px;padding-left:20px;padding-right:20px;">
 	<div class="col-xs-12">
 		<div class="col-xs-4">
-			<h1>COMPARISON TOOL</h1>
+			<h1>Comparison Tool</h1>
 		</div>
 		<div class="col-xs-8" style="align-items:center">
 			<a href="{{path}}" style="float:right;padding-top:10px">
@@ -11,16 +11,15 @@
 			</a>
 		</div>
 	</div>
-	<div class="col-xs-12" style="height:1px;background-color:lightgray"></div>
-	<div class="col-xs-12" style="height:30px"></div>
-	<div class="col-xs-12">
-		<table style="width:100%;border:1px black solid;text-align:center">
+	<div class="col-xs-12" style="height:15px"></div>
+	<div class="col-xs-12" ng-if="compareSeafood">
+		<table style="width:100%;border:1px #d5d4d4 solid;text-align:center;table-layout: fixed">
 			<!-- header -->
-			<tr style="border:1px black solid;!important">
-				<th style="text-align:center!important">
-					Categories<div ng-dropdown-multiselect="" options="categories" selected-model="selectedCategories"></div>
+			<tr style="border:1px #d5d4d4 solid;!important">
+				<th style="text-align:center!important;width:325px">
+					Categories<div ng-dropdown-multiselect="" options="seafoodCategories" selected-model="selectedSeafoodCategories"></div>
 				</th>
-				<th ng-repeat="item in items" style="text-align:center!important">
+				<th ng-repeat="item in items" style="text-align:center!important" ng-if="item.seafood">
 					<div class="row">
 						<div class="col-xs-3"></div>
 						<div class="col-xs-6">
@@ -52,9 +51,9 @@
 				</div>
 			</th>
 		</tr>
-		<tr style="border:1px black solid;" ng-repeat="category in selectedCategories">
-			<td style="padding-top:5px;padding-bottom:5px;">{{category.title}}</td>
-			<td ng-repeat="item in items">
+		<tr style="border:1px #d5d4d4 solid;" ng-repeat="category in selectedSeafoodCategories">
+			<td style="padding-top:5px;padding-bottom:5px;width:325px">{{category.title}}</td>
+			<td ng-repeat="item in items" ng-if="item.seafood">
 				<div ng-if="category.isBoolean">
 					<i class="fa" ng-class="{ 'fa-check': item[category.property], 'fa-times': !item[category.property] }"/>
 				</div>
@@ -64,5 +63,59 @@
 			</td>
 		</tr>
 	</table>
+	<div class="col-xs-12" style="height:15px"></div>
+	<div class="col-xs-12" style="height:15px"></div>
+</div>
+<div class="col-xs-12" ng-if="compareCans" style="padding-bottom:48px">
+	<table style="width:100%;border:1px #d5d4d4 solid;text-align:center;table-layout:fixed">
+		<!-- header -->
+		<tr style="border:1px #d5d4d4 solid;!important">
+			<th style="text-align:center!important;width:325px">
+				Categories<div ng-dropdown-multiselect="" options="canCategories" selected-model="selectedCanCategories"></div>
+			</th>
+			<th ng-repeat="item in items" style="text-align:center!important" ng-if="!item.seafood">
+				<div class="row">
+					<div class="col-xs-3"></div>
+					<div class="col-xs-6">
+						<div>
+							<img src="{{item.source}}" style="width:100px"></img>
+						</div>
+						<div>
+							<h3 style="margin:0!important;padding-bottom:5px">{{item.title}}</h3>
+							<div style="display:inline-flex;padding-bottom:10px">
+								<button type="button" ng-click="changeQuantity('-', item)" style="border-top-left-radius: 12px;border-bottom-left-radius: 12px; border:1px solid lightgray;outline:none!important"
+								ng-disabled="item.quantity == 0" ng-class="{ 'modal-button': item.quantity !== 0 }">
+								<i class="fa fa-minus" style="color:#0c0c0c!important"></i>
+							</button>
+							<div style="padding-left:10px;padding-right:10px;border-top:1px solid lightgray;border-bottom:1px solid lightgray">
+								<h4>{{item.quantity}}</h4>
+							</div>
+							<button type="button" ng-click="changeQuantity('+', item)" style="border-top-right-radius: 12px;border-bottom-right-radius: 12px; border:1px solid lightgray;outline:none!important" class="modal-button">
+								<i class="fa fa-plus" style="color:#0c0c0c!important"></i>
+							</button>
+						</div>
+						<br/>
+						<button class="btn btn-danger" ng-click="removeItem(item)">Remove Item</button>
+						<br/>
+						<div style="height:10px;width:50px"></div>
+					</div>
+				</div>
+				<div class="col-xs-3">
+				</div>
+			</div>
+		</th>
+	</tr>
+	<tr style="border:1px #d5d4d4 solid;" ng-repeat="category in selectedCanCategories">
+		<td style="padding-top:5px;padding-bottom:5px;width:325px">{{category.title}}</td>
+		<td ng-repeat="item in items" ng-if="!item.seafood">
+			<div ng-if="category.isBoolean">
+				<i class="fa" ng-class="{ 'fa-check': item[category.property], 'fa-times': !item[category.property] }"/>
+			</div>
+			<div ng-if="!category.isBoolean">
+				{{ item[category.property] }}
+			</div>
+		</td>
+	</tr>
+</table>
 </div>
 </div>

@@ -1,7 +1,7 @@
 angular.module('websiteApp')
 .controller('comparisonController', ['$scope', '$rootScope', '$http', '$window', '$uibModal', '$location', 'toaster',
 	function($scope, $rootScope, $http, $window, $uibModal, $location, toaster) {
-		$scope.categories = [
+		$scope.seafoodCategories = [
 		{
 			title: 'Date Caught',
 			property: 'date',
@@ -30,7 +30,37 @@ angular.module('websiteApp')
 			label: 'Fresh'
 		}];
 
-		$scope.selectedCategories = angular.copy($scope.categories);
+		$scope.canCategories = [
+		{
+			title: 'Price',
+			property: 'price',
+			label: 'Price'
+		},
+		{
+			title: 'Brand',
+			property: 'brand',
+			label: 'Brand'
+		},
+		{
+			title: 'Volume',
+			property: 'volume',
+			label: 'Volume'
+		},
+		{
+			title: 'Organic',
+			property: 'organic',
+			label: 'Organic',
+			isBoolean: true
+		},
+		{
+			title: 'Low Sodium',
+			property: 'lowSodium',
+			label: 'Low Sodium',
+			isBoolean: true
+		},]
+
+		$scope.selectedSeafoodCategories = angular.copy($scope.seafoodCategories);
+		$scope.selectedCanCategories = angular.copy($scope.canCategories);
 
 		var items = {
 			Cod: {
@@ -42,6 +72,8 @@ angular.module('websiteApp')
 				date: '11/11/2018',
 				oceanwise: true,
 				fresh: true,
+				search: 'Cod',
+				seafood: true,
 				search: 'Cod'
 			},
 			Grouper: {
@@ -53,6 +85,8 @@ angular.module('websiteApp')
 				date: '11/12/2018',
 				oceanwise: false,
 				fresh: true,
+				search: 'Grouper',
+				seafood: true,
 				search: 'Grouper'
 			},
 			Halibut: {
@@ -64,6 +98,8 @@ angular.module('websiteApp')
 				date: '11/13/2018',
 				oceanwise: true,
 				fresh: true,
+				search: 'Halibut',
+				seafood: true,
 				search: 'Halibut'
 			},
 			Haddock: {
@@ -74,6 +110,8 @@ angular.module('websiteApp')
 				date: '10/25/2018',
 				oceanwise: true,
 				fresh: false,
+				search: 'Haddock',
+				seafood: true,
 				search: 'Haddock'
 			},
 			Salmon: {
@@ -85,6 +123,8 @@ angular.module('websiteApp')
 				date: '11/11/2018',
 				oceanwise: false,
 				fresh: true,
+				search: 'Salmon',
+				seafood: true,
 				search: 'Salmon'
 			},
 			CampbellBeef: {
@@ -93,14 +133,24 @@ angular.module('websiteApp')
 				volume: '900 mL',
 				description: 'Beef stock, low sodium',
 				source: '/graphics/Stock_Broth/stock-wbg/campbellbeef.jpg',
+				search: 'CampbellBeef',
+				seafood: false,
+				brand: 'Campbell\'s',
+				organic: false,
+				lowSodium: true,
 				search: 'CampbellBeef'
 			},
 			KitchenChicken: {
 				title: 'Kitchen Basics Chicken Stock',
 				price: '$4.49',
-				volume: '946 mL',
+				volume: '946mL',
 				description: 'Chicken stock',
 				source: '/graphics/Stock_Broth/stock-wbg/kitchenchicken.jpg',
+				search: 'KitchenChicken',
+				seafood: false,
+				brand: 'Kitchen Basics',
+				organic: false,
+				lowSodium: false,
 				search: 'KitchenChicken'
 			},
 			SwansonBeef: {
@@ -109,6 +159,11 @@ angular.module('websiteApp')
 				volume: '907 mL',
 				description: 'Beef stock, low sodium',
 				source: '/graphics/Stock_Broth/stock-wbg/swansonbeef.jpg',
+				search: 'SwansonBeef',
+				seafood: false,
+				brand: 'Swanson',
+				organic: false,
+				lowSodium: true,
 				search: 'SwansonBeef'
 			},
 			SwansonChicken: {
@@ -117,6 +172,11 @@ angular.module('websiteApp')
 				volume: '907 mL',
 				description: 'Chicken stock',
 				source: '/graphics/Stock_Broth/stock-wbg/swansonchicken.jpg',
+				search: 'SwansonChicken',
+				seafood: false,
+				brand: 'Swanson',
+				organic: false,
+				lowSodium: false,
 				search: 'SwansonChicken'
 			},
 			Vegetable: {
@@ -125,6 +185,11 @@ angular.module('websiteApp')
 				volume: '946 mL',
 				description: 'Vegetable stock, organic, low sodium',
 				source: '/graphics/Stock_Broth/stock-wbg/vegetable.jpg',
+				search: 'Vegetable',
+				seafood: false,
+				brand: 'Pacific',
+				organic: true,
+				lowSodium: true,
 				search: 'Vegetable'
 			}
 		};
@@ -145,6 +210,7 @@ angular.module('websiteApp')
 		$scope.changeQuantity = function(operation, item) {
 			if (operation === '-') {
 				item.quantity--;
+				$window.sessionStorage.setItem(item, $scope.item.quantity);
 				$rootScope.$broadcast('shoppingCartRemove');
 				toaster.pop({
 					type: 'info',
@@ -152,18 +218,17 @@ angular.module('websiteApp')
 				});
 			} else {
 				item.quantity++;
+				$window.sessionStorage.setItem(item, $scope.item.quantity);
 				$rootScope.$broadcast('shoppingCartAdd');
 				toaster.pop({
 					type: 'info',
 					body: item.title + ' added to cart'
 				});
 			}
-
-			$window.sessionStorage.setItem(item.title.toLowerCase(), item.quantity);
 		}
 
 		$scope.removeItem = function(item) {
-			$window.sessionStorage.removeItem('compare' + item.title);
+			$window.sessionStorage.removeItem('compare' + item.search);
 			findItems();
 
 			toaster.pop({
@@ -183,6 +248,12 @@ angular.module('websiteApp')
 				if (item) {
 					items[key].quantity = parseInt(quantity);
 					$scope.items.push(items[key]);
+
+					if (items[key].seafood) {
+						$scope.compareSeafood = true;
+					} else {
+						$scope.compareCans = true;
+					}
 				}
 			});
 		}
