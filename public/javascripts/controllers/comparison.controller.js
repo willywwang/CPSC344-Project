@@ -38,7 +38,7 @@ angular.module('websiteApp')
 				price: '$3.99/lb',
 				origin: 'Norway',
 				description: 'Fillet, fresh',
-				source: '/graphics/Fish/fish-wbg/cod.jpg',
+				source: '/graphics/Fish/fish-wbg/Cod.jpg',
 				date: '11/11/2018',
 				oceanwise: true,
 				fresh: true,
@@ -49,7 +49,7 @@ angular.module('websiteApp')
 				price: '$9.99/lb',
 				origin: 'Australia',
 				description: 'Whole, gutted, fresh',
-				source: '/graphics/Fish/fish-wbg/grouper.jpg',
+				source: '/graphics/Fish/fish-wbg/Grouper.jpg',
 				date: '11/12/2018',
 				oceanwise: false,
 				fresh: true,
@@ -60,7 +60,7 @@ angular.module('websiteApp')
 				price: '$15.99/lb',
 				origin: 'Alaska',
 				description: 'Fillet, fresh',
-				source: '/graphics/Fish/fish-wbg/halibut.jpg',
+				source: '/graphics/Fish/fish-wbg/Halibut.jpg',
 				date: '11/13/2018',
 				oceanwise: true,
 				fresh: true,
@@ -70,7 +70,7 @@ angular.module('websiteApp')
 				title: 'Haddock',
 				price: '$12.99/lb',
 				origin: 'Russia',
-				source: '/graphics/Fish/fish-wbg/haddock.jpg',
+				source: '/graphics/Fish/fish-wbg/Haddock.jpg',
 				date: '10/25/2018',
 				oceanwise: true,
 				fresh: false,
@@ -81,7 +81,7 @@ angular.module('websiteApp')
 				price: '$11.99/lb',
 				origin: 'Victoria',
 				description: 'Whole, fresh',
-				source: '/graphics/Fish/fish-wbg/salmon.jpg',
+				source: '/graphics/Fish/fish-wbg/Salmon.jpg',
 				date: '11/11/2018',
 				oceanwise: false,
 				fresh: true,
@@ -92,7 +92,7 @@ angular.module('websiteApp')
 				price: '$3.39',
 				volume: '900 mL',
 				description: 'Beef stock, low sodium',
-				source: '/graphics/stock_broth/stock-wbg/campbellbeef.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/campbellbeef.jpg',
 				search: 'CampbellBeef'
 			},
 			KitchenChicken: {
@@ -100,7 +100,7 @@ angular.module('websiteApp')
 				price: '$4.49',
 				volume: '946 mL',
 				description: 'Chicken stock',
-				source: '/graphics/stock_broth/stock-wbg/kitchenchicken.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/kitchenchicken.jpg',
 				search: 'KitchenChicken'
 			},
 			SwansonBeef: {
@@ -108,7 +108,7 @@ angular.module('websiteApp')
 				price: '$3.99',
 				volume: '907 mL',
 				description: 'Beef stock, low sodium',
-				source: '/graphics/stock_broth/stock-wbg/swansonbeef.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/swansonbeef.jpg',
 				search: 'SwansonBeef'
 			},
 			SwansonChicken: {
@@ -116,7 +116,7 @@ angular.module('websiteApp')
 				price: '$3.29',
 				volume: '907 mL',
 				description: 'Chicken stock',
-				source: '/graphics/stock_broth/stock-wbg/swansonchicken.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/swansonchicken.jpg',
 				search: 'SwansonChicken'
 			},
 			Vegetable: {
@@ -124,7 +124,7 @@ angular.module('websiteApp')
 				price: '$4.99',
 				volume: '946 mL',
 				description: 'Vegetable stock, organic, low sodium',
-				source: '/graphics/stock_broth/stock-wbg/vegetable.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/vegetable.jpg',
 				search: 'Vegetable'
 			}
 		};

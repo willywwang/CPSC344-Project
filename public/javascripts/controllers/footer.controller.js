@@ -6,22 +6,22 @@ angular.module('websiteApp')
 		var items = {
 			cod: {
 				title: 'Cod',
-				source: '/graphics/Fish/fish-wbg/cod.jpg',
+				source: '/graphics/Fish/fish-wbg/Cod.jpg',
 				search: 'Cod'
 			},
 			grouper: {
 				title: 'Grouper',
-				source: '/graphics/Fish/fish-wbg/grouper.jpg',
+				source: '/graphics/Fish/fish-wbg/Grouper.jpg',
 				search: 'Grouper'
 			},
 			halibut: {
 				title: 'Halibut',
-				source: '/graphics/Fish/fish-wbg/halibut.jpg',
+				source: '/graphics/Fish/fish-wbg/Halibut.jpg',
 				search: 'Halibut'
 			},
 			haddock: {
 				title: 'Haddock',
-				source: '/graphics/Fish/fish-wbg/haddock.jpg',
+				source: '/graphics/Fish/fish-wbg/Haddock.jpg',
 				search: 'Haddock'
 			},
 			salmon: {
@@ -31,27 +31,27 @@ angular.module('websiteApp')
 			},
 			campbellbeef: {
 				title: 'Campbell\'s Beef Stock',
-				source: '/graphics/stock_broth/stock-wbg/campbellbeef.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/campbellbeef.jpg',
 				search: 'CampbellBeef'
 			},
 			kitchenchicken: {
 				title: 'Kitchen Basics Chicken Stock',
-				source: '/graphics/stock_broth/stock-wbg/kitchenchicken.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/kitchenchicken.jpg',
 				search: 'KitchenChicken'
 			},
 			swansonbeef: {
 				title: 'Swanson Beef Stock',
-				source: '/graphics/stock_broth/stock-wbg/swansonbeef.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/swansonbeef.jpg',
 				search: 'SwansonBeef'
 			},
 			swansonchicken: {
 				title: 'Swanson Chicken Broth',
-				source: '/graphics/stock_broth/stock-wbg/swansonchicken.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/swansonchicken.jpg',
 				search: 'SwansonChicken'
 			},
 			vegetable: {
 				title: 'Pacific Vegetable Broth',
-				source: '/graphics/stock_broth/stock-wbg/vegetable.jpg',
+				source: '/graphics/Stock_Broth/stock-wbg/vegetable.jpg',
 				search: 'Vegetable'
 			}
 		};
