@@ -58,5 +58,7 @@ angular.module('websiteApp')
 					$scope.cost += parseInt(quantity) * items[item];
 				}
 			});
+
+			$scope.cost = Math.round($scope.cost * 100) / 100
 		}
 	}]);

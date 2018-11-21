@@ -62,5 +62,7 @@ angular.module('websiteApp')
 					}
 				}
 			});
+
+			$scope.totalPrice = Math.round($scope.totalPrice * 100) / 100
 		}
 	}]);
