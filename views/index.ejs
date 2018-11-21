@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="javascripts/controllers/comparison.controller.js"></script>
 	<script type="text/javascript" src="javascripts/controllers/cart.controller.js"></script>
 	<script type="text/javascript" src='javascripts/controllers/item.modal.controller.js'></script>
+	<script tyoe="text/javascript" src="javascripts/services/items.provider.js"></script>
 	<script type="text/javascript" src="javascripts/directives/enter.directive.js"></script>
 
 	<script>
@@ -86,16 +87,18 @@
 					RESERVE<br/>TIME SLOT
 				</h4>
 			</div>
-			<div class="menu-button-1" style="height:60px;display:table">
-				<div style="position:relative;">
-					<img style="height:60px" src="graphics/logos/Cart.png"/>
-					<span class="badge badge-notify" style="font-size:10px;">{{shoppingCount}}</span>
+			<a href="/cart">
+				<div class="menu-button-1" style="height:60px;display:table">
+					<div style="position:relative;">
+						<img style="height:60px" src="graphics/logos/Cart.png"/>
+						<span class="badge badge-notify" style="font-size:10px;">{{shoppingCount}}</span>
+					</div>
+					<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
+						MY CART<br/>
+						{{'$' + cost}}
+					</h4>
 				</div>
-				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle" href="/cart">
-					MY CART<br/>
-					{{'$' + cost}}
-				</h4>
-			</div>
+			</a>
 		</div>
 		<div class="col-xs-12" style="padding-left:0;padding-right:0;">
 			<div class="view" ng-view></div>

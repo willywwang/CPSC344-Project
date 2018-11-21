@@ -1,0 +1,146 @@
+angular.module('websiteApp')
+.factory('items', [function() {
+	var items = {
+		cod: {
+			title: 'Cod',
+			price: '$3.99/lb',
+			origin: 'Norway',
+			description: 'Fillet, fresh',
+			source: '/graphics/Fish/fish-wbg/Cod.jpg',
+			date: '11/11/2018',
+			oceanwise: true,
+			fresh: true,
+			search: 'Cod',
+			seafood: true,
+			search: 'Cod',
+			numPrice: 3.99
+		},
+		grouper: {
+			title: 'Grouper',
+			price: '$9.99/lb',
+			origin: 'Australia',
+			description: 'Whole, gutted, fresh',
+			source: '/graphics/Fish/fish-wbg/Grouper.jpg',
+			date: '11/12/2018',
+			oceanwise: false,
+			fresh: true,
+			search: 'Grouper',
+			seafood: true,
+			search: 'Grouper',
+			numPrice: 9.99
+		},
+		halibut: {
+			title: 'Halibut',
+			price: '$15.99/lb',
+			origin: 'Alaska',
+			description: 'Fillet, fresh',
+			source: '/graphics/Fish/fish-wbg/Halibut.jpg',
+			date: '11/13/2018',
+			oceanwise: true,
+			fresh: true,
+			search: 'Halibut',
+			seafood: true,
+			search: 'Halibut',
+			numPrice: 15.99
+		},
+		haddock: {
+			title: 'Haddock',
+			price: '$12.99/lb',
+			origin: 'Russia',
+			source: '/graphics/Fish/fish-wbg/Haddock.jpg',
+			date: '10/25/2018',
+			oceanwise: true,
+			fresh: false,
+			search: 'Haddock',
+			seafood: true,
+			search: 'Haddock',
+			numPrice: 12.99
+		},
+		salmon: {
+			title: 'Salmon',
+			price: '$11.99/lb',
+			origin: 'Victoria',
+			description: 'Whole, fresh',
+			source: '/graphics/Fish/fish-wbg/Salmon.jpg',
+			date: '11/11/2018',
+			oceanwise: false,
+			fresh: true,
+			search: 'Salmon',
+			seafood: true,
+			search: 'Salmon',
+			numPrice: 11.99
+		},
+		campbellbeef: {
+			title: 'Campbell\'s Beef Stock',
+			price: '$3.39',
+			volume: '900 mL',
+			description: 'Beef stock, low sodium',
+			source: '/graphics/Stock_Broth/stock-wbg/campbellbeef.jpg',
+			search: 'CampbellBeef',
+			seafood: false,
+			brand: 'Campbell\'s',
+			organic: false,
+			lowSodium: true,
+			search: 'CampbellBeef',
+			numPrice: 3.39
+		},
+		kitchenchicken: {
+			title: 'Kitchen Basics Chicken Stock',
+			price: '$4.49',
+			volume: '946mL',
+			description: 'Chicken stock',
+			source: '/graphics/Stock_Broth/stock-wbg/kitchenchicken.jpg',
+			search: 'KitchenChicken',
+			seafood: false,
+			brand: 'Kitchen Basics',
+			organic: false,
+			lowSodium: false,
+			search: 'KitchenChicken',
+			numPrice: 4.49
+		},
+		swansonbeef: {
+			title: 'Swanson Beef Stock',
+			price: '$3.99',
+			volume: '907 mL',
+			description: 'Beef stock, low sodium',
+			source: '/graphics/Stock_Broth/stock-wbg/swansonbeef.jpg',
+			search: 'SwansonBeef',
+			seafood: false,
+			brand: 'Swanson',
+			organic: false,
+			lowSodium: true,
+			search: 'SwansonBeef',
+			numPrice: 3.99
+		},
+		swansonchicken: {
+			title: 'Swanson Chicken Broth',
+			price: '$3.29',
+			volume: '907 mL',
+			description: 'Chicken stock',
+			source: '/graphics/Stock_Broth/stock-wbg/swansonchicken.jpg',
+			search: 'SwansonChicken',
+			seafood: false,
+			brand: 'Swanson',
+			organic: false,
+			lowSodium: false,
+			search: 'SwansonChicken',
+			numPrice: 3.29
+		},
+		vegetable: {
+			title: 'Pacific Vegetable Broth',
+			price: '$4.99',
+			volume: '946 mL',
+			description: 'Vegetable stock, organic, low sodium',
+			source: '/graphics/Stock_Broth/stock-wbg/vegetable.jpg',
+			search: 'Vegetable',
+			seafood: false,
+			brand: 'Pacific',
+			organic: true,
+			lowSodium: true,
+			search: 'Vegetable',
+			numPrice: 4.99
+		}
+	};
+
+	return items;
+}])
