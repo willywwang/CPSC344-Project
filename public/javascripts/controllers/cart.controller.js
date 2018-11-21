@@ -50,6 +50,8 @@ angular.module('websiteApp')
 					var item = items[itemKey];
 					item.quantity = parseInt(quantity);
 					item.totalPrice = item.quantity * item.numPrice;
+					item.totalPrice = parseFloat(Math.round(item.totalPrice * 100) / 100).toFixed(2);
+					
 					$scope.items.push(item);
 
 					$scope.totalQuantity += item.quantity;
