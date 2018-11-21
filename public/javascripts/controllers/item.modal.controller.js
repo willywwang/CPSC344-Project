@@ -119,8 +119,16 @@ angular.module('websiteApp')
 		$scope.updateComparison = function() {
 			if ($scope.isCompared) {
 				$window.sessionStorage.setItem('compare' + $scope.item.search, true);
+				toaster.pop({
+					type: 'info',
+					body: $scope.item.title + ' added to comparison'
+				});
 			} else {
 				$window.sessionStorage.removeItem('compare' + $scope.item.search);
+				toaster.pop({
+					type: 'info',
+					body: $scope.item.title + ' removed from comparison'
+				});
 			}
 
 			$rootScope.$broadcast('comparisonUpdated');
