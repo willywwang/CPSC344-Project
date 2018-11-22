@@ -213,7 +213,7 @@ angular.module('websiteApp')
 				$window.sessionStorage.setItem(item.search.toLowerCase(), item.quantity);
 				$rootScope.$broadcast('shoppingCartRemove');
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: item.title + ' removed from cart'
 				});
 			} else {
@@ -221,7 +221,7 @@ angular.module('websiteApp')
 				$window.sessionStorage.setItem(item.search.toLowerCase(), item.quantity);
 				$rootScope.$broadcast('shoppingCartAdd');
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: item.title + ' added to cart'
 				});
 			}
@@ -232,7 +232,7 @@ angular.module('websiteApp')
 			findItems();
 
 			toaster.pop({
-				type: 'info',
+				type: 'success',
 				body: item.title + ' removed from comparison'
 			});
 
@@ -240,6 +240,8 @@ angular.module('websiteApp')
 		}
 		function findItems() {
 			$scope.items = [];
+			$scope.compareSeafood = false;
+			$scope.compareCans = false;
 
 			Object.keys(items).forEach(function(key) {
 				var item = $window.sessionStorage.getItem('compare' + key);

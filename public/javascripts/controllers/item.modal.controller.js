@@ -47,7 +47,7 @@ angular.module('websiteApp')
 				price: '$3.39',
 				volume: '900 mL',
 				description: 'Beef stock, low sodium',
-				source: '/graphics/stock_broth/stock/campbellbeef.png',
+				source: '/graphics/Stock_Broth/stock/campbellbeef.png',
 				search: 'CampbellBeef'
 			},
 			kitchenchicken: {
@@ -55,7 +55,7 @@ angular.module('websiteApp')
 				price: '$4.49',
 				volume: '946 mL',
 				description: 'Chicken stock',
-				source: '/graphics/stock_broth/stock/kitchenchicken.png',
+				source: '/graphics/Stock_Broth/stock/kitchenchicken.png',
 				search: 'KitchenChicken'
 			},
 			swansonbeef: {
@@ -63,7 +63,7 @@ angular.module('websiteApp')
 				price: '$3.99',
 				volume: '907 mL',
 				description: 'Beef stock, low sodium',
-				source: '/graphics/stock_broth/stock/swansonbeef.png',
+				source: '/graphics/Stock_Broth/stock/swansonbeef.png',
 				search: 'SwansonBeef'
 			},
 			swansonchicken: {
@@ -71,7 +71,7 @@ angular.module('websiteApp')
 				price: '$3.29',
 				volume: '907 mL',
 				description: 'Chicken stock',
-				source: '/graphics/stock_broth/stock/swansonchicken.png',
+				source: '/graphics/Stock_Broth/stock/swansonchicken.png',
 				search: 'SwansonChicken'
 			},
 			vegetable: {
@@ -79,7 +79,7 @@ angular.module('websiteApp')
 				price: '$4.99',
 				volume: '946 mL',
 				description: 'Vegetable stock, organic, low sodium',
-				source: '/graphics/stock_broth/stock/vegetable.png',
+				source: '/graphics/Stock_Broth/stock/vegetable.png',
 				search: 'Vegetable'
 			}
 		};
@@ -102,7 +102,7 @@ angular.module('websiteApp')
 				$window.sessionStorage.setItem(item, $scope.item.quantity);
 				$rootScope.$broadcast('shoppingCartRemove');
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: $scope.item.title + ' removed from cart'
 				});
 			} else {
@@ -110,7 +110,7 @@ angular.module('websiteApp')
 				$window.sessionStorage.setItem(item, $scope.item.quantity);
 				$rootScope.$broadcast('shoppingCartAdd');
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: $scope.item.title + ' added to cart'
 				});
 			}
@@ -120,13 +120,13 @@ angular.module('websiteApp')
 			if ($scope.isCompared) {
 				$window.sessionStorage.setItem('compare' + $scope.item.search, true);
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: $scope.item.title + ' added to comparison'
 				});
 			} else {
 				$window.sessionStorage.removeItem('compare' + $scope.item.search);
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: $scope.item.title + ' removed from comparison'
 				});
 			}

@@ -10,16 +10,17 @@
 			<h4 style="margin:0!important;padding-bottom:5px">{{item.description}}</h4>
 			<br/>
 			<div style="display:inline-flex;">
-				<button type="button" ng-click="changeQuantity('-')" style="border-top-left-radius: 12px;border-bottom-left-radius: 12px; border:1px solid #edecec;outline:none!important;background-color:#edecec"
-				ng-disabled="item.quantity == 0" ng-class="{ 'modal-button': item.quantity !== 0 }">
-				<i class="fa fa-minus" style="color:#0c0c0c!important"></i>
-			</button>
-			<div style="padding-left:10px;padding-right:10px;border-top:1px solid lightgray;border-bottom:1px solid #edecec">
-				<h4>{{item.quantity}}</h4>
+				<button type="button" ng-click="changeQuantity('-')" style="border-top-left-radius: 12px;border-bottom-left-radius: 12px; border:1px solid #4d9737;outline:none!important;background-color:#60bb46"
+					ng-disabled="item.quantity == 0" ng-class="{ 'modal-button': item.quantity !== 0 }">
+					<i class="fa fa-minus" style="color:#fff!important"></i>
+				</button>
+				<div style="padding-left:10px;padding-right:10px;border-top:1px solid #4d9737;border-bottom:1px solid #4d9737">
+					<h4>{{item.quantity}}</h4>
+				</div>
+				<button type="button" ng-click="changeQuantity('+')" style="border-top-right-radius: 12px;border-bottom-right-radius: 12px; border:1px solid #4d9737;outline:none!important;background-color:#60bb46" class="modal-button">
+					<i class="fa fa-plus" style="color:#fff!important"></i>
+				</button>
 			</div>
-			<button type="button" ng-click="changeQuantity('+')" style="border-top-right-radius: 12px;border-bottom-right-radius: 12px; border:1px solid #edecec;outline:none!important;background-color:#edecec" class="modal-button">
-				<i class="fa fa-plus" style="color:#0c0c0c!important"></i>
-			</button>
 		</div>
 	</div>
 	<div class="col-xs-12" style="height:15px"></div>

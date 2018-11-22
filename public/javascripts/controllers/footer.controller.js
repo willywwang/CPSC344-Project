@@ -70,7 +70,7 @@ angular.module('websiteApp')
 			$window.sessionStorage.removeItem('compare' + item.search);
 
 			toaster.pop({
-				type: 'info',
+				type: 'success',
 				body: item.title + ' removed from comparison'
 			});
 
@@ -96,7 +96,7 @@ angular.module('websiteApp')
 			});
 
 			toaster.pop({
-				type: 'info',
+				type: 'success',
 				body: 'Comparisons removed'
 			});
 			$rootScope.$broadcast('comparisonCleared');
@@ -104,6 +104,7 @@ angular.module('websiteApp')
 
 		function findItems() {
 			$scope.items = [];
+			$scope.hasComparison = false;
 
 			Object.keys(items).forEach(function(key) {
 				var object = items[key];
@@ -111,6 +112,7 @@ angular.module('websiteApp')
 
 				if (item) {
 					$scope.items.push(items[key]);
+					$scope.hasComparison = true;
 				}
 			});
 		}

@@ -8,12 +8,12 @@
 	</div>
 	<div class="col-xs-12" style="height:170px"></div>
 	<div class="col-xs-12 " style="display:inline-flex;">
-		<div style="width:150px"></div>
-		<div ng-repeat="item in items" style="display:inline-flex;">
+		<div class="col-xs-1"></div>
+		<div class="col-xs-2" ng-repeat="item in items" style="display:inline-flex;">
 			<div class="hover" style="text-align:center;width:250px;height:225px" ng-click="openModal(item.link)">
 				<img style="width:190px;padding-bottom:15px" src="{{item.source}}"/>
 			</div>
-			<div style="width:100px"></div>
 		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>

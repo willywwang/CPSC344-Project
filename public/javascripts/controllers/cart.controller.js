@@ -20,7 +20,7 @@ angular.module('websiteApp')
 				$window.sessionStorage.setItem(item.search.toLowerCase(), item.quantity);
 				$rootScope.$broadcast('shoppingCartRemove');
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: item.title + ' removed from cart'
 				});
 			} else {
@@ -28,7 +28,7 @@ angular.module('websiteApp')
 				$window.sessionStorage.setItem(item.search.toLowerCase(), item.quantity);
 				$rootScope.$broadcast('shoppingCartAdd');
 				toaster.pop({
-					type: 'info',
+					type: 'success',
 					body: item.title + ' added to cart'
 				});
 			}
@@ -55,7 +55,7 @@ angular.module('websiteApp')
 					$scope.items.push(item);
 
 					$scope.totalQuantity += item.quantity;
-					$scope.totalPrice += item.totalPrice;
+					$scope.totalPrice += parseFloat(item.totalPrice);
 
 					if (item.seafood) {
 						$scope.hasSeafood = true;
