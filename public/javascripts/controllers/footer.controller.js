@@ -105,6 +105,7 @@ angular.module('websiteApp')
 		function findItems() {
 			$scope.items = [];
 			$scope.hasComparison = false;
+			$scope.compareCount = 0;
 
 			Object.keys(items).forEach(function(key) {
 				var object = items[key];
@@ -113,6 +114,7 @@ angular.module('websiteApp')
 				if (item) {
 					$scope.items.push(items[key]);
 					$scope.hasComparison = true;
+					$scope.compareCount++;
 				}
 			});
 		}

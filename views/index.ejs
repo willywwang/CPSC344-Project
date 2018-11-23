@@ -108,17 +108,17 @@
 		<!-- comparisons -->
 		<div class="col-xs-12" ng-controller="footerController" style="position: fixed;bottom:1%">
 			<div class="col-xs-12">
-				<button type="button" style="float:right;box-shadow:none;align-items:center" ng-click="clearComparisons()">
-					<i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;Clear Comparisons
+				<button type="button" style="float:right;box-shadow:none;align-items:center;height:45px;width:200px" ng-click="clearComparisons()">
+					<i class="fa fa-times-circle-o"></i>&nbsp;&nbsp;<b>Clear Comparisons</b>
 				</button>
 				<div style="width:5px;height:2px;float:right"></div>
 				<a href="/comparison">
-					<button type="button" style="float:right;align-items:center;color:black!important" ng-class="{highlight: hasComparison}">
-						<i class="fa fa-check-circle-o"></i>&nbsp;&nbsp;Compare Items
+					<button type="button" style="float:right;align-items:center;color:black!important;height:45px;width:150px" ng-class="{highlight: hasComparison, compareButton: hasComparison}">
+						<span class="badge badge-count" style="font-size:10px;">{{compareCount}}</span>&nbsp;&nbsp;<b>Compare Items</b>
 					</button>
 				</a>
 				<div style="width:5px;height:2px;float:right"></div>
-				<button type="button" style="float:right;box-shadow:none;align-items:center" ng-click="toggleComparisons()">
+				<button type="button" style="float:right;box-shadow:none;align-items:center;height:45px;width:150px" ng-click="toggleComparisons()">
 					<i class="fa" ng-class="{'fa-caret-up': !comparisonOn, 'fa-caret-down': comparisonOn}"></i>&nbsp;&nbsp;<b>Comparisons</b>
 				</button>
 			</div>

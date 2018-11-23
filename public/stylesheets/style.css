@@ -93,6 +93,10 @@ a, a:hover, a:active, a:visited, a:focus {
    right: 0px;
 }
 
+.badge-count {
+	background: #ff5959;
+}
+
 .remove-button {
 	outline: none;
 }
@@ -126,6 +130,11 @@ a, a:hover, a:active, a:visited, a:focus {
     outline: none;
     border-color: #7ac253 !important;
     box-shadow: 0 0 50px #7ac253;
+    border: 1px #7ac253 solid;
+}
+
+.compareButton {
+	background-color: #7ac253;
 }
 
 .row {
