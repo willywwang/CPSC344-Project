@@ -47,7 +47,7 @@ angular.module('websiteApp')
 				price: '$3.39',
 				volume: '900 mL',
 				description: 'Beef stock, low sodium',
-				source: '/graphics/Stock_Broth/stock/campbellbeef.png',
+				source: '/graphics/Stock_Broth/stock-wbg/campbellbeef.jpg',
 				search: 'CampbellBeef'
 			},
 			kitchenchicken: {
@@ -55,7 +55,7 @@ angular.module('websiteApp')
 				price: '$4.49',
 				volume: '946 mL',
 				description: 'Chicken stock',
-				source: '/graphics/Stock_Broth/stock/kitchenchicken.png',
+				source: '/graphics/Stock_Broth/stock-wbg/kitchenchicken.jpg',
 				search: 'KitchenChicken'
 			},
 			swansonbeef: {
@@ -63,7 +63,7 @@ angular.module('websiteApp')
 				price: '$3.99',
 				volume: '907 mL',
 				description: 'Beef stock, low sodium',
-				source: '/graphics/Stock_Broth/stock/swansonbeef.png',
+				source: '/graphics/Stock_Broth/stock-wbg/swansonbeef.jpg',
 				search: 'SwansonBeef'
 			},
 			swansonchicken: {
@@ -71,7 +71,7 @@ angular.module('websiteApp')
 				price: '$3.29',
 				volume: '907 mL',
 				description: 'Chicken stock',
-				source: '/graphics/Stock_Broth/stock/swansonchicken.png',
+				source: '/graphics/Stock_Broth/stock-wbg/swansonchicken.jpg',
 				search: 'SwansonChicken'
 			},
 			vegetable: {
@@ -79,7 +79,7 @@ angular.module('websiteApp')
 				price: '$4.99',
 				volume: '946 mL',
 				description: 'Vegetable stock, organic, low sodium',
-				source: '/graphics/Stock_Broth/stock/vegetable.png',
+				source: '/graphics/Stock_Broth/stock-wbg/vegetable.jpg',
 				search: 'Vegetable'
 			}
 		};

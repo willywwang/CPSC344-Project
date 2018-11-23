@@ -143,7 +143,7 @@ angular.module('websiteApp')
 			KitchenChicken: {
 				title: 'Kitchen Basics Chicken Stock',
 				price: '$4.49',
-				volume: '946mL',
+				volume: '946 mL',
 				description: 'Chicken stock',
 				source: '/graphics/Stock_Broth/stock-wbg/kitchenchicken.jpg',
 				search: 'KitchenChicken',

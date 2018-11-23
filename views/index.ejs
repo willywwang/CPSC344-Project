@@ -43,7 +43,7 @@
 
 	<base href="/">
 </head>
-<body ng-app="websiteApp" onresize="resizeHeader()">
+<body ng-app="websiteApp">
 	<div class="container">
 		<div class="col-xs-12" style="display:inline-flex;">
 			<div style="width:20px"></div>
@@ -53,52 +53,54 @@
 		</div>
 		<div class="col-xs-12" ng-controller="headerController" style="display:inline-flex;background-color:#7ac253;box-shadow:#d3d3d3 0 4px 4px -2px;height:60px">
 			<toaster-container toaster-options="{'close-button': true, 'time-out': 3500}"></toaster-container>
-			<div style="width:20px"></div>
-			<div class="menu-button" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40;box-sizing: border-box">
-				<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
-					Shop<br/>Departments
-				</h4>
+			<div class="col-xs-3" style="display:inline-flex">
+				<div style="width:20px"></div>
+				<div class="menu-button" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40;box-sizing: border-box">
+					<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
+						Shop<br/>Departments
+					</h4>
+				</div>
+				<div class="menu-button" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40">
+					<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
+						Weekly<br/>Flyer
+					</h4>
+				</div>
+				<div class="menu-button" style="height:60px;display:table">
+					<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
+						Shop<br/>Recipes
+					</h4>
+				</div>
 			</div>
-			<div class="menu-button" style="border-right: none;height:60px;display:table;box-shadow:1px 0 #57ab40">
-				<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
-					Weekly<br/>Flyer
-				</h4>
-			</div>
-			<div class="menu-button" style="height:60px;display:table">
-				<h4 style="padding:5px;padding-left:10px;padding-right:10px;display:table-cell;vertical-align:middle">
-					Shop<br/>Recipes
-				</h4>
-			</div>
-			<div style="width:10px"></div>
-			<div style="position:relative;width:50%!important;height:60px;">
+			<div class="col-xs-4" style="position:relative;width:50%!important;height:60px;">
 				<input class="search" type="text" ng-model="searchTerm" placeholder="Search for items" style="padding:5px!important;margin-top:7.5px;border:none;padding-left:20px!important;height:45px" enter="search()"/>
 				<button class="search-button" ng-click="search()">Go</button>
 			</div>
-			<div style="width:10px"></div>
-			<div class="menu-button-1" style="border-right: none;height:60px;display:table;border-right:1px #57ab40 solid;">
-				<img style="height:60px" src="graphics/logos/Profile.png"/>
-				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
-					SIGN IN /<br/>REGISTER
-				</h4>
-			</div>
-			<div class="menu-button-1" style="border-right: none;height:60px;display:table;border-right:1px #57ab40 solid;">
-				<img style="height:60px" src="graphics/logos/Calendar.png"/>
-				<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
-					RESERVE<br/>TIME SLOT
-				</h4>
-			</div>
-			<a href="/cart">
-				<div class="menu-button-1" style="height:60px;display:table">
-					<div style="position:relative;">
-						<img style="height:60px" src="graphics/logos/Cart.png"/>
-						<span class="badge badge-notify" style="font-size:10px;">{{shoppingCount}}</span>
-					</div>
+			<div class="col-xs-5" style="display:inline-flex;width:50%!important">
+				<div class="menu-button-1" style="border-right: none;height:60px;display:table;border-right:1px #57ab40 solid;">
+					<img style="height:60px" src="graphics/logos/Profile.png"/>
 					<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
-						MY CART<br/>
-						{{'$' + cost}}
+						SIGN IN /<br/>REGISTER
 					</h4>
 				</div>
-			</a>
+				<div class="menu-button-1" style="border-right: none;height:60px;display:table;border-right:1px #57ab40 solid;">
+					<img style="height:60px" src="graphics/logos/Calendar.png"/>
+					<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
+						RESERVE<br/>TIME SLOT
+					</h4>
+				</div>
+				<a href="/cart">
+					<div class="menu-button-1" style="height:60px;display:table">
+						<div style="position:relative;">
+							<img style="height:60px" src="graphics/logos/Cart.png"/>
+							<span class="badge badge-notify" style="font-size:10px;">{{shoppingCount}}</span>
+						</div>
+						<h4 style="padding:5px;padding-left:0px;padding-right:10px;display:table-cell;vertical-align:middle">
+							MY CART<br/>
+							{{'$' + cost}}
+						</h4>
+					</div>
+				</a>
+			</div>
 		</div>
 		<div class="col-xs-12" style="padding-left:0;padding-right:0;">
 			<div class="view" ng-view></div>

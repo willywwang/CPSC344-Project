@@ -1,37 +1,37 @@
 <div class="modal-body">
 	<div class="row">
-		<div class="col-xs-5">
-			<img src="{{item.source}}" style="width:200px"></img>
-		</div>
-		<div class="col-xs-7">
-			<h3 style="margin:0!important;padding-bottom:5px;font-weight:bold;padding-top:20px">{{item.title}}</h3>
-			<h4 style="margin:0!important;padding-bottom:5px">{{item.price}}</h4>
-			<h4 style="margin:0!important;padding-bottom:5px">{{item.origin || item.volume}}</h4>
-			<h4 style="margin:0!important;padding-bottom:5px">{{item.description}}</h4>
-			<br/>
-			<div style="display:inline-flex;">
-				<button type="button" ng-click="changeQuantity('-')" style="border-top-left-radius: 12px;border-bottom-left-radius: 12px; border:1px solid #4d9737;outline:none!important;background-color:#60bb46"
-					ng-disabled="item.quantity == 0" ng-class="{ 'modal-button': item.quantity !== 0 }">
-					<i class="fa fa-minus" style="color:#fff!important"></i>
-				</button>
-				<div style="padding-left:10px;padding-right:10px;border-top:1px solid #4d9737;border-bottom:1px solid #4d9737">
-					<h4>{{item.quantity}}</h4>
+		<div class="col-xs-12">
+			<div class="col-xs-5">
+				<img src="{{item.source}}" style="width:200px"/>
+			</div>
+			<div class="col-xs-7">
+				<h3 style="margin:0!important;padding-bottom:5px;font-weight:bold;padding-top:20px">{{item.title}}</h3>
+				<h4 style="margin:0!important;padding-bottom:5px">{{item.price}}</h4>
+				<h4 style="margin:0!important;padding-bottom:5px">{{item.origin || item.volume}}</h4>
+				<h4 style="margin:0!important;padding-bottom:5px">{{item.description}}</h4>
+				<br/>
+				<div style="display:inline-flex;">
+					<button type="button" ng-click="changeQuantity('-')" style="border-top-left-radius: 12px;border-bottom-left-radius: 12px; border:1px solid #4d9737;outline:none!important;background-color:#60bb46"
+						ng-disabled="item.quantity == 0" ng-class="{ 'modal-button': item.quantity !== 0 }">
+						<i class="fa fa-minus" style="color:#fff!important"></i>
+					</button>
+					<div style="padding-left:10px;padding-right:10px;border-top:1px solid #4d9737;border-bottom:1px solid #4d9737">
+						<h4>{{item.quantity}}</h4>
+					</div>
+					<button type="button" ng-click="changeQuantity('+')" style="border-top-right-radius: 12px;border-bottom-right-radius: 12px; border:1px solid #4d9737;outline:none!important;background-color:#60bb46" class="modal-button">
+						<i class="fa fa-plus" style="color:#fff!important"></i>
+					</button>
 				</div>
-				<button type="button" ng-click="changeQuantity('+')" style="border-top-right-radius: 12px;border-bottom-right-radius: 12px; border:1px solid #4d9737;outline:none!important;background-color:#60bb46" class="modal-button">
-					<i class="fa fa-plus" style="color:#fff!important"></i>
-				</button>
 			</div>
 		</div>
-	</div>
-	<div class="col-xs-12" style="height:15px"></div>
-	<div class="col-xs-12" style="align-items:center">
-		<div class="col-xs-3"></div>			
-		<div class="col-xs-6">
-			<label style="padding-left:50px"><input ng-change="updateComparison()" ng-model="isCompared" type="checkbox"/>&nbsp;Add item for comparison</label>
+		<div class="col-xs-12" style="align-items:center;padding-top:15px">
+			<div class="col-xs-3"></div>			
+			<div class="col-xs-6">
+				<label style="padding-left:50px"><input ng-change="updateComparison()" ng-model="isCompared" type="checkbox"/>&nbsp;Add item for comparison</label>
+			</div>
+			<div class="col-xs-3"></div>
 		</div>
-		<div class="col-xs-3"></div>
 	</div>
-</div>
 </div>
 <div class="modal-footer">
 	<input type="close" value="Close" ng-click="close()" class="btn btn-primary btn-close"/>

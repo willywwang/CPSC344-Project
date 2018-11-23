@@ -11,11 +11,9 @@ angular.module('websiteApp')
 
 		(function init() {
 			$window.sessionStorage.setItem('path', 'Store Map');
-			determineMatch();
 		})();
 
-		function determineMatch() {
-			var searchTerm = $window.sessionStorage.getItem('search') || '';
+		function determineMatch(searchTerm) {
 			var searchTerms = searchTerm.split(' ');
 
 			$scope.isCanMatch = false;
@@ -38,6 +36,6 @@ angular.module('websiteApp')
 		}
 
 		$scope.$on('searchUpdated', function(event, args) {
-			determineMatch();
+			determineMatch(args.searchTerm);
 		});
 	}]);
