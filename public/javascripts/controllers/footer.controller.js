@@ -99,6 +99,10 @@ angular.module('websiteApp')
 				type: 'success',
 				body: 'Comparisons removed'
 			});
+
+			$scope.hasComparison = false;
+			$scope.compareCount = 0;
+
 			$rootScope.$broadcast('comparisonCleared');
 		}
 
